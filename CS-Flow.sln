@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS-Flow", "CS-Flow.UI\CS-Flow.csproj", "{C2309EE1-EEAD-4A7F-AED2-3E882FF33AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS-Flow.Models", "CS-Flow.Models\CS-Flow.Models.csproj", "{BA6BF8BF-1A0B-4F84-9366-2C41774AEC73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2309EE1-EEAD-4A7F-AED2-3E882FF33AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2309EE1-EEAD-4A7F-AED2-3E882FF33AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2309EE1-EEAD-4A7F-AED2-3E882FF33AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2309EE1-EEAD-4A7F-AED2-3E882FF33AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6BF8BF-1A0B-4F84-9366-2C41774AEC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6BF8BF-1A0B-4F84-9366-2C41774AEC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6BF8BF-1A0B-4F84-9366-2C41774AEC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6BF8BF-1A0B-4F84-9366-2C41774AEC73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B808CEC-218B-4093-8A86-48F5F1EEEA76}
+	EndGlobalSection
+EndGlobal
