@@ -303,11 +303,12 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlow.ColumnHeadersHeight = 50;
+            this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Order,
             this.Truck,
@@ -329,6 +330,7 @@
             this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.dgvFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvFlow.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvFlow.MultiSelect = false;
             this.dgvFlow.Name = "dgvFlow";
             this.dgvFlow.ReadOnly = true;
             this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -361,6 +363,7 @@
             this.Order.HeaderText = "Order";
             this.Order.Name = "Order";
             this.Order.ReadOnly = true;
+            this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Order.Width = 200;
             // 
             // Truck
@@ -369,6 +372,7 @@
             this.Truck.HeaderText = "Truck";
             this.Truck.Name = "Truck";
             this.Truck.ReadOnly = true;
+            this.Truck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Truck.Width = 150;
             // 
             // Product
@@ -377,6 +381,7 @@
             this.Product.HeaderText = "Product";
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
+            this.Product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Product.Width = 150;
             // 
             // Preset
@@ -385,6 +390,7 @@
             this.Preset.HeaderText = "Preset";
             this.Preset.Name = "Preset";
             this.Preset.ReadOnly = true;
+            this.Preset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Preset.Width = 150;
             // 
             // AssignTo
@@ -393,6 +399,7 @@
             this.AssignTo.HeaderText = "Assign To";
             this.AssignTo.Name = "AssignTo";
             this.AssignTo.ReadOnly = true;
+            this.AssignTo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AssignTo.Width = 150;
             // 
             // Pin
@@ -400,6 +407,7 @@
             this.Pin.HeaderText = "PIN";
             this.Pin.Name = "Pin";
             this.Pin.ReadOnly = true;
+            this.Pin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Pin.Width = 150;
             // 
             // Loaded
@@ -407,6 +415,7 @@
             this.Loaded.HeaderText = "Loaded";
             this.Loaded.Name = "Loaded";
             this.Loaded.ReadOnly = true;
+            this.Loaded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Loaded.Width = 150;
             // 
             // WorkFlowForm

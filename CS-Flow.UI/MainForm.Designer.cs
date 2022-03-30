@@ -62,7 +62,7 @@
             this.pnSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnSideBar.Location = new System.Drawing.Point(0, 0);
             this.pnSideBar.Name = "pnSideBar";
-            this.pnSideBar.Size = new System.Drawing.Size(180, 501);
+            this.pnSideBar.Size = new System.Drawing.Size(180, 500);
             this.pnSideBar.TabIndex = 0;
             this.pnSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnSideBar_Paint);
             // 
@@ -75,7 +75,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnSettings.Image = global::CS_Flow.UI.Properties.Resources.icSettings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 451);
+            this.btnSettings.Location = new System.Drawing.Point(0, 450);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(180, 50);
@@ -290,7 +290,7 @@
             this.pnContent.Location = new System.Drawing.Point(180, 30);
             this.pnContent.Name = "pnContent";
             this.pnContent.Padding = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.pnContent.Size = new System.Drawing.Size(620, 471);
+            this.pnContent.Size = new System.Drawing.Size(620, 470);
             this.pnContent.TabIndex = 2;
             this.pnContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContent_Paint);
             // 
@@ -298,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 501);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnTopBar);
             this.Controls.Add(this.pnSideBar);
