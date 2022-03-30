@@ -71,7 +71,7 @@
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnSettings.Image = global::CS_Flow.UI.Properties.Resources.icSettings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,7 +91,7 @@
             this.btnGraphical.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGraphical.FlatAppearance.BorderSize = 0;
             this.btnGraphical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGraphical.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGraphical.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGraphical.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnGraphical.Image = global::CS_Flow.UI.Properties.Resources.icGraphics;
             this.btnGraphical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,7 +111,7 @@
             this.btnEventLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEventLog.FlatAppearance.BorderSize = 0;
             this.btnEventLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEventLog.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEventLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnEventLog.Image = global::CS_Flow.UI.Properties.Resources.icEventLog;
             this.btnEventLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +131,7 @@
             this.btnMeterReading.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMeterReading.FlatAppearance.BorderSize = 0;
             this.btnMeterReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMeterReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMeterReading.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMeterReading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnMeterReading.Image = global::CS_Flow.UI.Properties.Resources.icMeterReading;
             this.btnMeterReading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,7 +151,7 @@
             this.btnFillingPoint.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFillingPoint.FlatAppearance.BorderSize = 0;
             this.btnFillingPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFillingPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFillingPoint.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFillingPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnFillingPoint.Image = global::CS_Flow.UI.Properties.Resources.icFillingPoint;
             this.btnFillingPoint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +171,7 @@
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTransaction.FlatAppearance.BorderSize = 0;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransaction.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnTransaction.Image = global::CS_Flow.UI.Properties.Resources.icTransaction;
             this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,7 +191,7 @@
             this.btnWorkFlow.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWorkFlow.FlatAppearance.BorderSize = 0;
             this.btnWorkFlow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkFlow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWorkFlow.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnWorkFlow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnWorkFlow.Image = global::CS_Flow.UI.Properties.Resources.icWorkFlow;
             this.btnWorkFlow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,11 +219,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(39, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 37);
+            this.label1.Size = new System.Drawing.Size(103, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "CS-Flow";
             this.label1.Click += new System.EventHandler(this.label1_Click);

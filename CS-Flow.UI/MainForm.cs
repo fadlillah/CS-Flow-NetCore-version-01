@@ -1,5 +1,6 @@
 using CS_Flow.Manager;
 using CS_Flow.Models;
+
 namespace CS_Flow.UI
 {
     public partial class MainForm : Form
@@ -56,44 +57,74 @@ namespace CS_Flow.UI
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-
+            includeForm<SettingsForm>();
+            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#242726");
         }
 
         private void btnGraphical_Click(object sender, EventArgs e)
         {
-
+            includeForm<GraphicalForm>();
+            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnGraphical.BackColor = ColorTranslator.FromHtml("#242726");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void btnEventLog_Click(object sender, EventArgs e)
         {
-
+            includeForm<EventLogForm>();
+            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnEventLog.BackColor = ColorTranslator.FromHtml("#242726");
+            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void btnMeterReading_Click(object sender, EventArgs e)
         {
-
+            includeForm<MeterReadingForm>();
+            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnMeterReading.BackColor = ColorTranslator.FromHtml("#242726");
+            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void btnFillingPoint_Click(object sender, EventArgs e)
         {
-            includeForm<FillingPoint>();
+            includeForm<FillingPointForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#242726");
             btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
             btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
             btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-           // includeForm<FillingPoint>();
+            includeForm<TransactionForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#242726");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
             btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
             btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
             btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void btnWorkFlow_Click(object sender, EventArgs e)
@@ -105,7 +136,7 @@ namespace CS_Flow.UI
             btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
             btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
             btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-
+            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
 
         private void pnContent_Paint(object sender, PaintEventArgs e)
