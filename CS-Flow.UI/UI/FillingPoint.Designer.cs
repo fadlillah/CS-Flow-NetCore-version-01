@@ -40,20 +40,20 @@
             this.pnBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnTable = new System.Windows.Forms.Panel();
-            this.dgvFlow = new System.Windows.Forms.DataGridView();
+            this.dgvFilling = new System.Windows.Forms.DataGridView();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Enabled = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tank_Temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tank_Dens = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FDM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TankTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TankDens = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fdmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnSearch.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
             this.pnTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilling)).BeginInit();
             this.SuspendLayout();
             // 
             // pnSearch
@@ -132,7 +132,7 @@
             // pnTable
             // 
             this.pnTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
-            this.pnTable.Controls.Add(this.dgvFlow);
+            this.pnTable.Controls.Add(this.dgvFilling);
             this.pnTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTable.Location = new System.Drawing.Point(0, 30);
             this.pnTable.Margin = new System.Windows.Forms.Padding(0);
@@ -141,54 +141,56 @@
             this.pnTable.Size = new System.Drawing.Size(800, 420);
             this.pnTable.TabIndex = 3;
             // 
-            // dgvFlow
+            // dgvFilling
             // 
-            this.dgvFlow.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvFlow.AllowUserToAddRows = false;
-            this.dgvFlow.AllowUserToDeleteRows = false;
-            this.dgvFlow.AllowUserToResizeColumns = false;
-            this.dgvFlow.AllowUserToResizeRows = false;
+            this.dgvFilling.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvFilling.AllowUserToAddRows = false;
+            this.dgvFilling.AllowUserToDeleteRows = false;
+            this.dgvFilling.AllowUserToResizeColumns = false;
+            this.dgvFilling.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvFlow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvFilling.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvFilling.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.dgvFilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvFilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvFilling.ColumnHeadersHeight = 50;
+            this.dgvFilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvFilling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name,
-            this.FGroup,
+            this.Fgroup,
             this.Product,
-            this.Enabled,
+            this.Enable,
             this.Tank,
-            this.Tank_Temp,
-            this.Tank_Dens,
-            this.FDM_ID});
+            this.TankTemp,
+            this.TankDens,
+            this.fdmId});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFlow.EnableHeadersVisualStyles = false;
-            this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.dgvFlow.Location = new System.Drawing.Point(0, 20);
-            this.dgvFlow.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvFlow.Name = "dgvFlow";
-            this.dgvFlow.ReadOnly = true;
-            this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvFilling.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvFilling.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFilling.EnableHeadersVisualStyles = false;
+            this.dgvFilling.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.dgvFilling.Location = new System.Drawing.Point(0, 20);
+            this.dgvFilling.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvFilling.MultiSelect = false;
+            this.dgvFilling.Name = "dgvFilling";
+            this.dgvFilling.ReadOnly = true;
+            this.dgvFilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -196,8 +198,8 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvFlow.RowHeadersVisible = false;
+            this.dgvFilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvFilling.RowHeadersVisible = false;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -205,11 +207,11 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvFlow.RowTemplate.Height = 40;
-            this.dgvFlow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFlow.Size = new System.Drawing.Size(800, 400);
-            this.dgvFlow.TabIndex = 0;
+            this.dgvFilling.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvFilling.RowTemplate.Height = 40;
+            this.dgvFilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFilling.Size = new System.Drawing.Size(800, 400);
+            this.dgvFilling.TabIndex = 1;
             // 
             // Name
             // 
@@ -217,15 +219,17 @@
             this.Name.HeaderText = "Name";
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
+            this.Name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Name.Width = 200;
             // 
-            // FGroup
+            // Fgroup
             // 
-            this.FGroup.FillWeight = 150F;
-            this.FGroup.HeaderText = "Fgroup";
-            this.FGroup.Name = "FGroup";
-            this.FGroup.ReadOnly = true;
-            this.FGroup.Width = 150;
+            this.Fgroup.FillWeight = 150F;
+            this.Fgroup.HeaderText = "Fgroup";
+            this.Fgroup.Name = "Fgroup";
+            this.Fgroup.ReadOnly = true;
+            this.Fgroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Fgroup.Width = 150;
             // 
             // Product
             // 
@@ -233,15 +237,17 @@
             this.Product.HeaderText = "Product";
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
+            this.Product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Product.Width = 150;
             // 
-            // Enabled
+            // Enable
             // 
-            this.Enabled.FillWeight = 150F;
-            this.Enabled.HeaderText = "Enabled";
-            this.Enabled.Name = "Enabled";
-            this.Enabled.ReadOnly = true;
-            this.Enabled.Width = 150;
+            this.Enable.FillWeight = 150F;
+            this.Enable.HeaderText = "Enable";
+            this.Enable.Name = "Enable";
+            this.Enable.ReadOnly = true;
+            this.Enable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Enable.Width = 150;
             // 
             // Tank
             // 
@@ -249,27 +255,30 @@
             this.Tank.HeaderText = "Tank";
             this.Tank.Name = "Tank";
             this.Tank.ReadOnly = true;
+            this.Tank.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Tank.Width = 150;
             // 
-            // Tank_Temp
+            // TankTemp
             // 
-            this.Tank_Temp.HeaderText = "Tank Temperature";
-            this.Tank_Temp.Name = "Tank_Temp";
-            this.Tank_Temp.ReadOnly = true;
-            this.Tank_Temp.Width = 150;
+            this.TankTemp.HeaderText = "Tank Temperature";
+            this.TankTemp.Name = "TankTemp";
+            this.TankTemp.ReadOnly = true;
+            this.TankTemp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TankTemp.Width = 150;
             // 
-            // Tank_Dens
+            // TankDens
             // 
-            this.Tank_Dens.HeaderText = "Tank Density";
-            this.Tank_Dens.Name = "Tank_Dens";
-            this.Tank_Dens.ReadOnly = true;
-            this.Tank_Dens.Width = 150;
+            this.TankDens.HeaderText = "Tank Density";
+            this.TankDens.Name = "TankDens";
+            this.TankDens.ReadOnly = true;
+            this.TankDens.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TankDens.Width = 150;
             // 
-            // FDM_ID
+            // fdmId
             // 
-            this.FDM_ID.HeaderText = "FDM ID";
-            this.FDM_ID.Name = "FDM_ID";
-            this.FDM_ID.ReadOnly = true;
+            this.fdmId.HeaderText = "FDM ID";
+            this.fdmId.Name = "fdmId";
+            this.fdmId.ReadOnly = true;
             // 
             // FillingPointForm
             // 
@@ -285,7 +294,7 @@
             this.pnSearchBox.ResumeLayout(false);
             this.pnBtnSearch.ResumeLayout(false);
             this.pnTable.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilling)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,14 +308,14 @@
         private Panel pnBtnSearch;
         private Button btnSearch;
         private Panel pnTable;
-        private DataGridView dgvFlow;
+        private DataGridView dgvFilling;
         private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn FGroup;
+        private DataGridViewTextBoxColumn Fgroup;
         private DataGridViewTextBoxColumn Product;
-        private DataGridViewTextBoxColumn Enabled;
+        private DataGridViewTextBoxColumn Enable;
         private DataGridViewTextBoxColumn Tank;
-        private DataGridViewTextBoxColumn Tank_Temp;
-        private DataGridViewTextBoxColumn Tank_Dens;
-        private DataGridViewTextBoxColumn FDM_ID;
+        private DataGridViewTextBoxColumn TankTemp;
+        private DataGridViewTextBoxColumn TankDens;
+        private DataGridViewTextBoxColumn fdmId;
     }
 }

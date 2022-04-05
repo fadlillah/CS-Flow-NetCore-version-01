@@ -19,7 +19,9 @@ namespace CS_Flow.UI
 
         private void GraphicalForm_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        
     }
 }
