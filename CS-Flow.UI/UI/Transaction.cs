@@ -15,6 +15,31 @@ namespace CS_Flow.UI
         public TransactionForm()
         {
             InitializeComponent();
+            searchBoxPlaceHolder();
+        }
+
+        private void searchBoxPlaceHolder()
+        {
+            rtbSearch.Text = "Type Here ...";
+            rtbSearch.ForeColor = ColorTranslator.FromHtml("#4B5465");
+        }
+
+        private void rtbSearch_Enter(object sender, EventArgs e)
+        {
+            if (rtbSearch.Text == "Type Here ...")
+            {
+                rtbSearch.Text = "";
+                rtbSearch.ForeColor = ColorTranslator.FromHtml("#fafafa");
+            }
+        }
+
+        private void rtbSearch_Leave(object sender, EventArgs e)
+        {
+            if (rtbSearch.Text.Trim() == "")
+            {
+                rtbSearch.Text = "Type Here ...";
+                rtbSearch.ForeColor = ColorTranslator.FromHtml("#221F1F");
+            }
         }
 
         private void TransactionForm_Load(object sender, EventArgs e)

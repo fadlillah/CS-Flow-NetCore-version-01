@@ -7,11 +7,16 @@ namespace CS_Flow.UI
     {
         FillingBatchManager _fillingBatchManager = new FillingBatchManager();
         public List<FillingBatch> fillingBatches = new List<FillingBatch>();
+
+        bool mouseDown;
+        private Point lastLocation;
+
         public MainForm()
         {
             InitializeComponent();
             includeForm<WorkFlowForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
+
         }
 
         private void includeForm<MiForm>() where MiForm : Form, new()
@@ -35,6 +40,27 @@ namespace CS_Flow.UI
             }
         }
 
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                int dx = e.Location.X - lastLocation.X;
+                int dy = e.Location.Y - lastLocation.Y;
+                this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
+            }
+        }
+
+        private void MainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -42,17 +68,24 @@ namespace CS_Flow.UI
 
         private void btnWindowSize_Click(object sender, EventArgs e)
         {
-            this.btnWindowSize.Image = Properties.Resources.icMaximize;
+            
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.btnWindowSize.Image = Properties.Resources.icMaximize;
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.btnWindowSize.Image = Properties.Resources.icRestoreDown;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pnSideBar_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -138,31 +171,14 @@ namespace CS_Flow.UI
             btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
             btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
         }
-
-        private void pnContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnTopBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void LoadDataAll()
         {
             FillingBatchManager fillingBatchManager = new FillingBatchManager();
             fillingBatches = fillingBatchManager.getAll();
             
         }
+
+        
     }
 }

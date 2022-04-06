@@ -62,9 +62,8 @@
             this.pnSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnSideBar.Location = new System.Drawing.Point(0, 0);
             this.pnSideBar.Name = "pnSideBar";
-            this.pnSideBar.Size = new System.Drawing.Size(180, 500);
+            this.pnSideBar.Size = new System.Drawing.Size(180, 480);
             this.pnSideBar.TabIndex = 0;
-            this.pnSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnSideBar_Paint);
             // 
             // btnSettings
             // 
@@ -75,7 +74,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.btnSettings.Image = global::CS_Flow.UI.Properties.Resources.icSettings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 450);
+            this.btnSettings.Location = new System.Drawing.Point(0, 430);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(180, 50);
@@ -214,19 +213,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(180, 60);
             this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label1.Location = new System.Drawing.Point(39, 9);
+            this.label1.Location = new System.Drawing.Point(38, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "CS-Flow";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnTopBar
             // 
@@ -237,9 +235,8 @@
             this.pnTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTopBar.Location = new System.Drawing.Point(180, 0);
             this.pnTopBar.Name = "pnTopBar";
-            this.pnTopBar.Size = new System.Drawing.Size(620, 30);
+            this.pnTopBar.Size = new System.Drawing.Size(592, 30);
             this.pnTopBar.TabIndex = 1;
-            this.pnTopBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTopBar_Paint);
             // 
             // btnMinimize
             // 
@@ -247,7 +244,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::CS_Flow.UI.Properties.Resources.icMinimize;
-            this.btnMinimize.Location = new System.Drawing.Point(530, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(502, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 2;
@@ -261,7 +258,7 @@
             this.btnWindowSize.FlatAppearance.BorderSize = 0;
             this.btnWindowSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWindowSize.Image = global::CS_Flow.UI.Properties.Resources.icRestoreDown;
-            this.btnWindowSize.Location = new System.Drawing.Point(560, 0);
+            this.btnWindowSize.Location = new System.Drawing.Point(532, 0);
             this.btnWindowSize.Name = "btnWindowSize";
             this.btnWindowSize.Size = new System.Drawing.Size(30, 30);
             this.btnWindowSize.TabIndex = 1;
@@ -275,7 +272,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::CS_Flow.UI.Properties.Resources.icClose;
-            this.btnClose.Location = new System.Drawing.Point(590, 0);
+            this.btnClose.Location = new System.Drawing.Point(562, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 0;
@@ -290,22 +287,24 @@
             this.pnContent.Location = new System.Drawing.Point(180, 30);
             this.pnContent.Name = "pnContent";
             this.pnContent.Padding = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.pnContent.Size = new System.Drawing.Size(620, 470);
+            this.pnContent.Size = new System.Drawing.Size(592, 450);
             this.pnContent.TabIndex = 2;
-            this.pnContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContent_Paint);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(772, 480);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnTopBar);
             this.Controls.Add(this.pnSideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.pnSideBar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

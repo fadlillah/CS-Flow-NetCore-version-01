@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFlow = new System.Windows.Forms.DataGridView();
+            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LogMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnTable = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnSplitterSearchBar = new System.Windows.Forms.Panel();
@@ -41,8 +43,6 @@
             this.rtbSearch = new System.Windows.Forms.RichTextBox();
             this.pnSearchBox = new System.Windows.Forms.Panel();
             this.pnSearch = new System.Windows.Forms.Panel();
-            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LogMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
             this.pnTable.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
@@ -116,6 +116,22 @@
             this.dgvFlow.Size = new System.Drawing.Size(800, 400);
             this.dgvFlow.TabIndex = 0;
             // 
+            // TimeStamp
+            // 
+            this.TimeStamp.HeaderText = "Time Stamp";
+            this.TimeStamp.Name = "TimeStamp";
+            this.TimeStamp.ReadOnly = true;
+            this.TimeStamp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TimeStamp.Width = 150;
+            // 
+            // LogMessage
+            // 
+            this.LogMessage.HeaderText = "LogMessage";
+            this.LogMessage.Name = "LogMessage";
+            this.LogMessage.ReadOnly = true;
+            this.LogMessage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.LogMessage.Width = 150;
+            // 
             // pnTable
             // 
             this.pnTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
@@ -173,6 +189,8 @@
             this.rtbSearch.Size = new System.Drawing.Size(670, 20);
             this.rtbSearch.TabIndex = 0;
             this.rtbSearch.Text = "Type Here ...";
+            this.rtbSearch.Enter += new System.EventHandler(this.rtbSearch_Enter);
+            this.rtbSearch.Leave += new System.EventHandler(this.rtbSearch_Leave);
             // 
             // pnSearchBox
             // 
@@ -198,22 +216,6 @@
             this.pnSearch.Name = "pnSearch";
             this.pnSearch.Size = new System.Drawing.Size(800, 30);
             this.pnSearch.TabIndex = 6;
-            // 
-            // TimeStamp
-            // 
-            this.TimeStamp.HeaderText = "Time Stamp";
-            this.TimeStamp.Name = "TimeStamp";
-            this.TimeStamp.ReadOnly = true;
-            this.TimeStamp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TimeStamp.Width = 150;
-            // 
-            // LogMessage
-            // 
-            this.LogMessage.HeaderText = "LogMessage";
-            this.LogMessage.Name = "LogMessage";
-            this.LogMessage.ReadOnly = true;
-            this.LogMessage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.LogMessage.Width = 150;
             // 
             // EventLogForm
             // 
