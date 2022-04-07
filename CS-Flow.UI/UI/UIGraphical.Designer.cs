@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class GraphicalForm
+    partial class UIGraphicalForm
     {
         /// <summary>
         /// Required designer variable.

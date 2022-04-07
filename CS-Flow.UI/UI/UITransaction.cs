@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class TransactionForm : Form
+    public partial class UITransactionForm : Form
     {
-        public TransactionForm()
+        public UITransactionForm()
         {
             InitializeComponent();
             searchBoxPlaceHolder();

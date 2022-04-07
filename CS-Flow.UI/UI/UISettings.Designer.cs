@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class SettingsForm
+    partial class UISettingsForm
     {
         /// <summary>
         /// Required designer variable.

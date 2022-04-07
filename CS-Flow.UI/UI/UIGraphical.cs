@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class GraphicalForm : Form
+    public partial class UIGraphicalForm : Form
     {
-        public GraphicalForm()
+        public UIGraphicalForm()
         {
             InitializeComponent();
         }

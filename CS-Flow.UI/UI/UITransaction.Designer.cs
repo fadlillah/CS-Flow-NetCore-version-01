@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class TransactionForm
+    partial class UITransactionForm
     {
         /// <summary>
         /// Required designer variable.

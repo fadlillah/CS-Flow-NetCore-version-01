@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class MeterReadingForm : Form
+    public partial class UIMeterReadingForm : Form
     {
-        public MeterReadingForm()
+        public UIMeterReadingForm()
         {
             InitializeComponent();
             searchBoxPlaceHolder();
@@ -40,6 +40,11 @@ namespace CS_Flow.UI
                 rtbSearch.Text = "Type Here ...";
                 rtbSearch.ForeColor = ColorTranslator.FromHtml("#221F1F");
             }
+        }
+
+        private void MeterReadingForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

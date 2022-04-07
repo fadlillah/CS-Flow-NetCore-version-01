@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CS_Flow.Models
 {
-    internal class ChildDevice
+    public class ChildDevice
     {
         public int id { get; set; }
         public int fp_id { get; set; }

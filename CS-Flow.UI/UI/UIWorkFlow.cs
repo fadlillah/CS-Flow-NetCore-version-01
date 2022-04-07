@@ -12,9 +12,9 @@ using CS_Flow.Models;
 
 namespace CS_Flow.UI
 {
-    public partial class WorkFlowForm : Form
+    public partial class UIWorkFlowForm : Form
     {
-        public WorkFlowForm()
+        public UIWorkFlowForm()
         {
             InitializeComponent();
             searchBoxPlaceHolder();

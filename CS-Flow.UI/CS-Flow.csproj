@@ -15,9 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="CS-Flow.Models">
-      <HintPath>..\CS-Flow.Models\bin\Debug\net6.0\CS-Flow.Models.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\CS-Flow.Models\CS-Flow.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

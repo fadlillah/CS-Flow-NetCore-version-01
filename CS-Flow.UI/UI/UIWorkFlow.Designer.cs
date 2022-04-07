@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class WorkFlowForm
+    partial class UIWorkFlowForm
     {
         /// <summary>
         /// Required designer variable.

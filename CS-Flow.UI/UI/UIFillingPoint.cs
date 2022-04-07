@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class FillingPointForm : Form
+    public partial class UIFillingPointForm : Form
     {
-        public FillingPointForm()
+        public UIFillingPointForm()
         {
            InitializeComponent();
         }

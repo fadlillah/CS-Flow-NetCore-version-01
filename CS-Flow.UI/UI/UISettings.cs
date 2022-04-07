@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class SettingsForm : Form
+    public partial class UISettingsForm : Form
     {
-        public SettingsForm()
+        public UISettingsForm()
         {
             InitializeComponent();
         }

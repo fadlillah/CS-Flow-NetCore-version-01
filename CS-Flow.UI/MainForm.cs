@@ -14,7 +14,7 @@ namespace CS_Flow.UI
         public MainForm()
         {
             InitializeComponent();
-            includeForm<WorkFlowForm>();
+            includeForm<UIWorkFlowForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
 
         }
@@ -90,7 +90,7 @@ namespace CS_Flow.UI
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            includeForm<SettingsForm>();
+            includeForm<UISettingsForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
@@ -102,7 +102,7 @@ namespace CS_Flow.UI
 
         private void btnGraphical_Click(object sender, EventArgs e)
         {
-            includeForm<GraphicalForm>();
+            includeForm<UIGraphicalForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
@@ -114,7 +114,7 @@ namespace CS_Flow.UI
 
         private void btnEventLog_Click(object sender, EventArgs e)
         {
-            includeForm<EventLogForm>();
+            includeForm<UIEventLogForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
@@ -126,7 +126,7 @@ namespace CS_Flow.UI
 
         private void btnMeterReading_Click(object sender, EventArgs e)
         {
-            includeForm<MeterReadingForm>();
+            includeForm<UIMeterReadingForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
@@ -138,7 +138,7 @@ namespace CS_Flow.UI
 
         private void btnFillingPoint_Click(object sender, EventArgs e)
         {
-            includeForm<FillingPointForm>();
+            includeForm<UIFillingPointForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#242726");
@@ -150,7 +150,7 @@ namespace CS_Flow.UI
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            includeForm<TransactionForm>();
+            includeForm<UITransactionForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#242726");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
@@ -162,7 +162,7 @@ namespace CS_Flow.UI
 
         private void btnWorkFlow_Click(object sender, EventArgs e)
         {
-            includeForm<WorkFlowForm>();
+            includeForm<UIWorkFlowForm>();
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
             btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
             btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");

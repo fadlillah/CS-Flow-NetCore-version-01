@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class FillingPointForm
+    partial class UIFillingPointForm
     {
         /// <summary>
         /// Required designer variable.

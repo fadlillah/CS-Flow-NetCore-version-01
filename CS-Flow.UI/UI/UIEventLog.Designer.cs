@@ -1,6 +1,6 @@
 ﻿namespace CS_Flow.UI
 {
-    partial class EventLogForm
+    partial class UIEventLogForm
     {
         /// <summary>
         /// Required designer variable.

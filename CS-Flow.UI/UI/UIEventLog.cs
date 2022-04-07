@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Flow.UI
 {
-    public partial class EventLogForm : Form
+    public partial class UIEventLogForm : Form
     {
-        public EventLogForm()
+        public UIEventLogForm()
         {
             InitializeComponent();
             searchBoxPlaceHolder();
