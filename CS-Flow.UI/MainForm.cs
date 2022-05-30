@@ -60,6 +60,8 @@ namespace CS_Flow.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
+            btnGraphical.Enabled = false;
+            btnGraphical.Visible = false;
             loadFillingPoint();
             tm_ack.Enabled = true;
             _ThreadBC = new Thread(t=>fillingPointDetailManager.updateConnection());

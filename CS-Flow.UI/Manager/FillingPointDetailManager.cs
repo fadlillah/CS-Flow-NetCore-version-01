@@ -143,16 +143,17 @@ namespace CS_Flow.Manager
                                                 _danloadLibs[inc].batch_request = fillingBatchs[0].preset;
                                                 _danloadLibs[inc].pinKey = Convert.ToInt32(fillingBatchs[0].pin);
                                                 _FillingBatchManager.UpdateStatus(fillingBatchs[0].order_id, 2);
-                                                //Insert New Filling Session
-                                                FillingSession fs = new FillingSession();
-                                                fs.batch_id = cd.id;
-                                                fs.filling_point_id = fpd.id;
-                                                fs.start_time =Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
-                                                fs.start_totalizer = _danloadLibs[inc].GrossTotal;
-                                                fs.preset = fillingBatchs[0].preset;
-                                                fs.temperature = fpd.tank_temperature;
-                                                fs.density = fpd.tank_density;
-                                                _fillingSessionManager.Add(fs);                                                
+                                                //Gate In Filling Session
+                                                //FillingSession fs = new FillingSession();
+                                                //fs.batch_id = cd.id;
+                                                //fs.filling_point_id = fpd.id;
+                                                //fs.start_time =Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
+                                                //fs.start_totalizer = _danloadLibs[inc].GrossTotal;
+                                                //fs.preset = fillingBatchs[0].preset;
+                                                //fs.temperature = fpd.tank_temperature;
+                                                //fs.density = fpd.tank_density;
+                                                //_fillingSessionManager.Add(fs);
+                                                _fillingSessionManager.StartLoaded(_danloadLibs[0].GrossTotal, fpd, cd, fillingBatchs[0]);
                                             }                                            
                                         }
                                         if (_danloadLibs[inc].DanloadStatus == "END_TRANSACTION_STATE")

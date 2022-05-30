@@ -15,9 +15,16 @@ namespace CS_Flow.Manager
         {
             return _fillingSessionGateway.getAll();
         }
-        public bool Add(FillingSession fs)
+        public bool StartLoaded(int StartTot, FillingPointDetail fpd, ChildDevice cd, FillingBatch Fb)
         {
-            return _fillingSessionGateway.Insert(fs);
+            FillingSession fillingSession = new FillingSession();
+            fillingSession.batch_id = Fb.id;
+            fillingSession.filling_point_id = fpd.id;
+            fillingSession.start_time = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
+            fillingSession.start_totalizer = StartTot;
+            fillingSession.preset = Fb.preset;
+            fillingSession.tank_supply = "";
+            return _fillingSessionGateway.Insert(fillingSession);
         }
     }
 }
