@@ -15,13 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CS-Flow.Lib\CS-Flow.Lib.csproj" />
     <ProjectReference Include="..\CS-Flow.Models\CS-Flow.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DanloadDriver">
-      <HintPath>..\..\Driver\DLL Build Danload\DanloadDriver\DanloadDriver\bin\Release\net6.0\DanloadDriver.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

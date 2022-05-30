@@ -15,14 +15,28 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblFillingSession.ToList();
         }
+        public FillingSession getByLoaded(int fpId, int fbId)
+        {
+            return _dataContext.tblFillingSession.FirstOrDefault(u => u.filling_point_id == fpId && u.batch_id == fbId);
+        }
         public bool Insert(FillingSession fillingSession)
+        {
+            var data = _dataContext.tblFillingSession.FirstOrDefault(u => u.id == fillingSession.id);
+            if (data != null)
+            {
+                return false;
+            }
+            _dataContext.tblFillingSession.Add(fillingSession);
+            return _dataContext.SaveChanges() > 0;
+        }
+        public bool Update(FillingSession fillingSession)
         {
             var data = _dataContext.tblFillingSession.FirstOrDefault(u => u.id == fillingSession.id);
             if (data == null)
             {
                 return false;
             }
-            _dataContext.tblFillingSession.Add(fillingSession);
+            _dataContext.Update(data);
             return _dataContext.SaveChanges() > 0;
         }
     }
