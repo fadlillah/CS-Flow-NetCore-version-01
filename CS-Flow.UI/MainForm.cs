@@ -30,7 +30,7 @@ namespace CS_Flow.UI
             //includeForm<UIWorkFlowForm>();
             OpenChildForm(new UIWorkFlowForm(), btnWorkFlow);
             
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
+            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#f5f5f5");
             _fillingBatchManager = new FillingBatchManager();
             _fillingBatches = new List<FillingBatch>();
             _fillingPointDetails = new List<FillingPointDetail>();
@@ -174,9 +174,40 @@ namespace CS_Flow.UI
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
-                    currentButton.BackColor = ColorTranslator.FromHtml("#242726");
+                    currentButton.BackColor = ColorTranslator.FromHtml("#f5f5f5");
                     currentButton.Font = new System.Drawing.Font("Lato", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }                
+                    currentButton.ForeColor = ColorTranslator.FromHtml("#1e2632");
+                    if (currentButton.Name == "btnWorkFlow")
+                    {
+                        currentButton.Image = Properties.Resources.icWorkFlow_dark;
+                    }                   
+                    else if (currentButton.Name == "btnTransaction")
+                    {
+                        currentButton.Image = Properties.Resources.icTransaction_dark;
+                    }
+                    else if (currentButton.Name == "btnFillingPoint")
+                    {
+                        currentButton.Image = Properties.Resources.icFillingPoint_dark;
+                    }
+                    else if (currentButton.Name == "btnMeterReading")
+                    {
+                        currentButton.Image = Properties.Resources.icMeterReading_dark;
+                    }
+                    else if (currentButton.Name == "btnEventLog")
+                    {
+                        currentButton.Image = Properties.Resources.icEventLog_dark;
+                    }
+                    else if (currentButton.Name == "btnGraphical")
+                    {
+                        currentButton.Image = Properties.Resources.icGraphics_dark;
+                    }
+                    else if (currentButton.Name == "btnSettings")
+                    {
+                        currentButton.Image = Properties.Resources.icSettings_dark;
+                    }
+                }    
+                
+                
             }
         }
         private void DisableButton()
@@ -185,8 +216,38 @@ namespace CS_Flow.UI
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = ColorTranslator.FromHtml("#26324A");
-                    previousBtn.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Button bt = (Button)previousBtn;
+                    bt.BackColor = ColorTranslator.FromHtml("#1E2632");
+                    bt.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    bt.ForeColor = ColorTranslator.FromHtml("#f5f5f5");
+                    if (bt.Name == "btnWorkFlow")
+                    {
+                        bt.Image = Properties.Resources.icWorkFlow;
+                    }
+                    else if (bt.Name == "btnTransaction")
+                    {
+                        bt.Image = Properties.Resources.icTransaction;
+                    }
+                    else if (bt.Name == "btnFillingPoint")
+                    {
+                        bt.Image = Properties.Resources.icFillingPoint;
+                    }
+                    else if (bt.Name == "btnMeterReading")
+                    {
+                        bt.Image = Properties.Resources.icMeterReading;
+                    }
+                    else if (bt.Name == "btnEventLog")
+                    {
+                        bt.Image = Properties.Resources.icEventLog;
+                    }
+                    else if (bt.Name == "btnGraphical")
+                    {
+                        bt.Image = Properties.Resources.icGraphics;
+                    }
+                    else if (bt.Name == "btnSettings")
+                    {
+                        bt.Image = Properties.Resources.icSettings;
+                    }
                 }
             }
         }

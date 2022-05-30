@@ -106,7 +106,7 @@ namespace CS_Flow.UI
         }
         private void DisableButton()
         {
-            foreach (Control previousBtn in pnButtonWorkFlow.Controls)
+            foreach (Control previousBtn in bnRow2.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {

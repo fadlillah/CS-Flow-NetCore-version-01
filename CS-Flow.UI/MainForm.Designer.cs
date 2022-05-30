@@ -45,6 +45,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pnContent = new System.Windows.Forms.Panel();
             this.tm_ack = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnSideBar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnTopBar.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // pnSideBar
             // 
-            this.pnSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.pnSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.pnSideBar.Controls.Add(this.btnSettings);
             this.pnSideBar.Controls.Add(this.btnGraphical);
             this.pnSideBar.Controls.Add(this.btnEventLog);
@@ -62,9 +63,9 @@
             this.pnSideBar.Controls.Add(this.btnWorkFlow);
             this.pnSideBar.Controls.Add(this.panel4);
             this.pnSideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnSideBar.Location = new System.Drawing.Point(0, 5);
             this.pnSideBar.Name = "pnSideBar";
-            this.pnSideBar.Size = new System.Drawing.Size(180, 480);
+            this.pnSideBar.Size = new System.Drawing.Size(180, 475);
             this.pnSideBar.TabIndex = 0;
             // 
             // btnSettings
@@ -73,10 +74,10 @@
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSettings.Image = global::CS_Flow.Properties.Resources.icSettings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 430);
+            this.btnSettings.Location = new System.Drawing.Point(0, 425);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(180, 50);
@@ -93,7 +94,7 @@
             this.btnGraphical.FlatAppearance.BorderSize = 0;
             this.btnGraphical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGraphical.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGraphical.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnGraphical.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnGraphical.Image = global::CS_Flow.Properties.Resources.icGraphics;
             this.btnGraphical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGraphical.Location = new System.Drawing.Point(0, 310);
@@ -113,7 +114,7 @@
             this.btnEventLog.FlatAppearance.BorderSize = 0;
             this.btnEventLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventLog.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEventLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnEventLog.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEventLog.Image = global::CS_Flow.Properties.Resources.icEventLog;
             this.btnEventLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventLog.Location = new System.Drawing.Point(0, 260);
@@ -133,7 +134,7 @@
             this.btnMeterReading.FlatAppearance.BorderSize = 0;
             this.btnMeterReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeterReading.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMeterReading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnMeterReading.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnMeterReading.Image = global::CS_Flow.Properties.Resources.icMeterReading;
             this.btnMeterReading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMeterReading.Location = new System.Drawing.Point(0, 210);
@@ -153,7 +154,7 @@
             this.btnFillingPoint.FlatAppearance.BorderSize = 0;
             this.btnFillingPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFillingPoint.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFillingPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnFillingPoint.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnFillingPoint.Image = global::CS_Flow.Properties.Resources.icFillingPoint;
             this.btnFillingPoint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFillingPoint.Location = new System.Drawing.Point(0, 160);
@@ -173,7 +174,7 @@
             this.btnTransaction.FlatAppearance.BorderSize = 0;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaction.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnTransaction.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnTransaction.Image = global::CS_Flow.Properties.Resources.icTransaction;
             this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransaction.Location = new System.Drawing.Point(0, 110);
@@ -193,7 +194,7 @@
             this.btnWorkFlow.FlatAppearance.BorderSize = 0;
             this.btnWorkFlow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkFlow.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnWorkFlow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnWorkFlow.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnWorkFlow.Image = global::CS_Flow.Properties.Resources.icWorkFlow;
             this.btnWorkFlow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWorkFlow.Location = new System.Drawing.Point(0, 60);
@@ -221,7 +222,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(38, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 41);
@@ -230,12 +231,12 @@
             // 
             // pnTopBar
             // 
-            this.pnTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pnTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.pnTopBar.Controls.Add(this.btnMinimize);
             this.pnTopBar.Controls.Add(this.btnWindowSize);
             this.pnTopBar.Controls.Add(this.btnClose);
             this.pnTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTopBar.Location = new System.Drawing.Point(180, 0);
+            this.pnTopBar.Location = new System.Drawing.Point(180, 5);
             this.pnTopBar.Name = "pnTopBar";
             this.pnTopBar.Size = new System.Drawing.Size(592, 30);
             this.pnTopBar.TabIndex = 1;
@@ -284,18 +285,27 @@
             // 
             // pnContent
             // 
-            this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
+            this.pnContent.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.Location = new System.Drawing.Point(180, 30);
+            this.pnContent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnContent.Location = new System.Drawing.Point(180, 35);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Padding = new System.Windows.Forms.Padding(50, 20, 50, 20);
-            this.pnContent.Size = new System.Drawing.Size(592, 450);
+            this.pnContent.Size = new System.Drawing.Size(592, 445);
             this.pnContent.TabIndex = 2;
             // 
             // tm_ack
             // 
             this.tm_ack.Interval = 500;
             this.tm_ack.Tick += new System.EventHandler(this.tm_ack_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(176)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(772, 5);
+            this.panel1.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -304,6 +314,7 @@
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnTopBar);
             this.Controls.Add(this.pnSideBar);
+            this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -338,5 +349,6 @@
         private Button btnWindowSize;
         private Button btnClose;
         private System.Windows.Forms.Timer tm_ack;
+        private Panel panel1;
     }
 }

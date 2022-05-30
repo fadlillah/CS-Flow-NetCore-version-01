@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnSearch = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnRow1 = new System.Windows.Forms.Panel();
+            this.topShadow = new System.Windows.Forms.Panel();
             this.pnSearchBox = new System.Windows.Forms.Panel();
             this.rtbSearch = new System.Windows.Forms.RichTextBox();
             this.pnSplitterSearchBar = new System.Windows.Forms.Panel();
             this.pnBtnSearch = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.pnButtonWorkFlow = new System.Windows.Forms.Panel();
+            this.bnRow2 = new System.Windows.Forms.Panel();
             this.btnCompleted = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInterrupted = new System.Windows.Forms.Button();
@@ -49,7 +51,7 @@
             this.btnStandBy = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnShowAll = new System.Windows.Forms.Button();
-            this.pnTable = new System.Windows.Forms.Panel();
+            this.pnRow3 = new System.Windows.Forms.Panel();
             this.dgvFlow = new System.Windows.Forms.DataGridView();
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Truck = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,50 +60,61 @@
             this.AssignTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnSearch.SuspendLayout();
+            this.pnRow1.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
-            this.pnButtonWorkFlow.SuspendLayout();
-            this.pnTable.SuspendLayout();
+            this.bnRow2.SuspendLayout();
+            this.pnRow3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnSearch
+            // pnRow1
             // 
-            this.pnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
-            this.pnSearch.Controls.Add(this.pnSearchBox);
-            this.pnSearch.Controls.Add(this.pnSplitterSearchBar);
-            this.pnSearch.Controls.Add(this.pnBtnSearch);
-            this.pnSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pnSearch.Location = new System.Drawing.Point(0, 0);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(800, 30);
-            this.pnSearch.TabIndex = 0;
+            this.pnRow1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnRow1.Controls.Add(this.topShadow);
+            this.pnRow1.Controls.Add(this.pnSearchBox);
+            this.pnRow1.Controls.Add(this.pnSplitterSearchBar);
+            this.pnRow1.Controls.Add(this.pnBtnSearch);
+            this.pnRow1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnRow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnRow1.Location = new System.Drawing.Point(0, 0);
+            this.pnRow1.Margin = new System.Windows.Forms.Padding(0);
+            this.pnRow1.Name = "pnRow1";
+            this.pnRow1.Padding = new System.Windows.Forms.Padding(20, 5, 20, 0);
+            this.pnRow1.Size = new System.Drawing.Size(800, 37);
+            this.pnRow1.TabIndex = 0;
+            // 
+            // topShadow
+            // 
+            this.topShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(176)))));
+            this.topShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topShadow.Location = new System.Drawing.Point(20, 5);
+            this.topShadow.Name = "topShadow";
+            this.topShadow.Size = new System.Drawing.Size(655, 2);
+            this.topShadow.TabIndex = 1;
             // 
             // pnSearchBox
             // 
-            this.pnSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.pnSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.pnSearchBox.Controls.Add(this.rtbSearch);
             this.pnSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSearchBox.Location = new System.Drawing.Point(0, 0);
+            this.pnSearchBox.Location = new System.Drawing.Point(20, 5);
             this.pnSearchBox.Name = "pnSearchBox";
             this.pnSearchBox.Padding = new System.Windows.Forms.Padding(25, 5, 0, 5);
-            this.pnSearchBox.Size = new System.Drawing.Size(695, 30);
+            this.pnSearchBox.Size = new System.Drawing.Size(655, 32);
             this.pnSearchBox.TabIndex = 3;
             // 
             // rtbSearch
             // 
-            this.rtbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.rtbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.rtbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbSearch.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.rtbSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rtbSearch.Location = new System.Drawing.Point(25, 5);
             this.rtbSearch.Multiline = false;
             this.rtbSearch.Name = "rtbSearch";
-            this.rtbSearch.Size = new System.Drawing.Size(670, 20);
+            this.rtbSearch.Size = new System.Drawing.Size(630, 22);
             this.rtbSearch.TabIndex = 0;
             this.rtbSearch.Text = "Type Here ...";
             this.rtbSearch.Enter += new System.EventHandler(this.rtbSearch_Enter);
@@ -110,63 +123,74 @@
             // pnSplitterSearchBar
             // 
             this.pnSplitterSearchBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSplitterSearchBar.Location = new System.Drawing.Point(695, 0);
+            this.pnSplitterSearchBar.Location = new System.Drawing.Point(675, 5);
             this.pnSplitterSearchBar.Name = "pnSplitterSearchBar";
-            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 30);
+            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 32);
             this.pnSplitterSearchBar.TabIndex = 5;
             // 
             // pnBtnSearch
             // 
+            this.pnBtnSearch.Controls.Add(this.panel1);
             this.pnBtnSearch.Controls.Add(this.btnSearch);
             this.pnBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBtnSearch.Location = new System.Drawing.Point(700, 0);
+            this.pnBtnSearch.Location = new System.Drawing.Point(680, 5);
             this.pnBtnSearch.Name = "pnBtnSearch";
-            this.pnBtnSearch.Size = new System.Drawing.Size(100, 30);
+            this.pnBtnSearch.Size = new System.Drawing.Size(100, 32);
             this.pnBtnSearch.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(176)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 2);
+            this.panel1.TabIndex = 3;
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.Location = new System.Drawing.Point(0, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.Size = new System.Drawing.Size(100, 32);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // pnButtonWorkFlow
+            // bnRow2
             // 
-            this.pnButtonWorkFlow.Controls.Add(this.btnCompleted);
-            this.pnButtonWorkFlow.Controls.Add(this.panel6);
-            this.pnButtonWorkFlow.Controls.Add(this.btnInterrupted);
-            this.pnButtonWorkFlow.Controls.Add(this.panel5);
-            this.pnButtonWorkFlow.Controls.Add(this.btnInProgress);
-            this.pnButtonWorkFlow.Controls.Add(this.panel4);
-            this.pnButtonWorkFlow.Controls.Add(this.btnStandBy);
-            this.pnButtonWorkFlow.Controls.Add(this.panel3);
-            this.pnButtonWorkFlow.Controls.Add(this.btnShowAll);
-            this.pnButtonWorkFlow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnButtonWorkFlow.Location = new System.Drawing.Point(0, 30);
-            this.pnButtonWorkFlow.Margin = new System.Windows.Forms.Padding(0);
-            this.pnButtonWorkFlow.Name = "pnButtonWorkFlow";
-            this.pnButtonWorkFlow.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.pnButtonWorkFlow.Size = new System.Drawing.Size(800, 60);
-            this.pnButtonWorkFlow.TabIndex = 1;
+            this.bnRow2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bnRow2.Controls.Add(this.btnCompleted);
+            this.bnRow2.Controls.Add(this.panel6);
+            this.bnRow2.Controls.Add(this.btnInterrupted);
+            this.bnRow2.Controls.Add(this.panel5);
+            this.bnRow2.Controls.Add(this.btnInProgress);
+            this.bnRow2.Controls.Add(this.panel4);
+            this.bnRow2.Controls.Add(this.btnStandBy);
+            this.bnRow2.Controls.Add(this.panel3);
+            this.bnRow2.Controls.Add(this.btnShowAll);
+            this.bnRow2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bnRow2.Location = new System.Drawing.Point(0, 37);
+            this.bnRow2.Margin = new System.Windows.Forms.Padding(0);
+            this.bnRow2.Name = "bnRow2";
+            this.bnRow2.Padding = new System.Windows.Forms.Padding(20, 15, 0, 15);
+            this.bnRow2.Size = new System.Drawing.Size(800, 60);
+            this.bnRow2.TabIndex = 1;
             // 
             // btnCompleted
             // 
-            this.btnCompleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnCompleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnCompleted.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCompleted.FlatAppearance.BorderSize = 0;
             this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCompleted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnCompleted.Location = new System.Drawing.Point(420, 15);
+            this.btnCompleted.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCompleted.Location = new System.Drawing.Point(440, 15);
             this.btnCompleted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnCompleted.Name = "btnCompleted";
             this.btnCompleted.Size = new System.Drawing.Size(100, 30);
@@ -178,20 +202,20 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(415, 15);
+            this.panel6.Location = new System.Drawing.Point(435, 15);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 30);
             this.panel6.TabIndex = 12;
             // 
             // btnInterrupted
             // 
-            this.btnInterrupted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnInterrupted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnInterrupted.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInterrupted.FlatAppearance.BorderSize = 0;
             this.btnInterrupted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterrupted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnInterrupted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnInterrupted.Location = new System.Drawing.Point(315, 15);
+            this.btnInterrupted.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInterrupted.Location = new System.Drawing.Point(335, 15);
             this.btnInterrupted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInterrupted.Name = "btnInterrupted";
             this.btnInterrupted.Size = new System.Drawing.Size(100, 30);
@@ -203,20 +227,20 @@
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(310, 15);
+            this.panel5.Location = new System.Drawing.Point(330, 15);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 30);
             this.panel5.TabIndex = 10;
             // 
             // btnInProgress
             // 
-            this.btnInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnInProgress.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInProgress.FlatAppearance.BorderSize = 0;
             this.btnInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInProgress.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnInProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnInProgress.Location = new System.Drawing.Point(210, 15);
+            this.btnInProgress.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInProgress.Location = new System.Drawing.Point(230, 15);
             this.btnInProgress.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInProgress.Name = "btnInProgress";
             this.btnInProgress.Size = new System.Drawing.Size(100, 30);
@@ -228,20 +252,20 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(205, 15);
+            this.panel4.Location = new System.Drawing.Point(225, 15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 30);
             this.panel4.TabIndex = 8;
             // 
             // btnStandBy
             // 
-            this.btnStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnStandBy.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnStandBy.FlatAppearance.BorderSize = 0;
             this.btnStandBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStandBy.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnStandBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnStandBy.Location = new System.Drawing.Point(105, 15);
+            this.btnStandBy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStandBy.Location = new System.Drawing.Point(125, 15);
             this.btnStandBy.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnStandBy.Name = "btnStandBy";
             this.btnStandBy.Size = new System.Drawing.Size(100, 30);
@@ -253,20 +277,20 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(100, 15);
+            this.panel3.Location = new System.Drawing.Point(120, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 30);
             this.panel3.TabIndex = 6;
             // 
             // btnShowAll
             // 
-            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.btnShowAll.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnShowAll.FlatAppearance.BorderSize = 0;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnShowAll.Location = new System.Drawing.Point(0, 15);
+            this.btnShowAll.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnShowAll.Location = new System.Drawing.Point(20, 15);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(100, 30);
@@ -275,15 +299,15 @@
             this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
-            // pnTable
+            // pnRow3
             // 
-            this.pnTable.Controls.Add(this.dgvFlow);
-            this.pnTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTable.Location = new System.Drawing.Point(0, 90);
-            this.pnTable.Margin = new System.Windows.Forms.Padding(0);
-            this.pnTable.Name = "pnTable";
-            this.pnTable.Size = new System.Drawing.Size(800, 360);
-            this.pnTable.TabIndex = 2;
+            this.pnRow3.Controls.Add(this.dgvFlow);
+            this.pnRow3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnRow3.Location = new System.Drawing.Point(0, 97);
+            this.pnRow3.Margin = new System.Windows.Forms.Padding(0);
+            this.pnRow3.Name = "pnRow3";
+            this.pnRow3.Size = new System.Drawing.Size(800, 353);
+            this.pnRow3.TabIndex = 2;
             // 
             // dgvFlow
             // 
@@ -292,21 +316,21 @@
             this.dgvFlow.AllowUserToDeleteRows = false;
             this.dgvFlow.AllowUserToResizeColumns = false;
             this.dgvFlow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFlow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFlow.ColumnHeadersHeight = 50;
             this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -317,14 +341,14 @@
             this.AssignTo,
             this.Pin,
             this.Loaded});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFlow.EnableHeadersVisualStyles = false;
             this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
@@ -334,26 +358,26 @@
             this.dgvFlow.Name = "dgvFlow";
             this.dgvFlow.ReadOnly = true;
             this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFlow.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFlow.RowTemplate.Height = 40;
             this.dgvFlow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFlow.Size = new System.Drawing.Size(800, 360);
+            this.dgvFlow.Size = new System.Drawing.Size(800, 353);
             this.dgvFlow.TabIndex = 0;
             this.dgvFlow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlow_CellClick);
             // 
@@ -424,17 +448,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnTable);
-            this.Controls.Add(this.pnButtonWorkFlow);
-            this.Controls.Add(this.pnSearch);
+            this.Controls.Add(this.pnRow3);
+            this.Controls.Add(this.bnRow2);
+            this.Controls.Add(this.pnRow1);
             this.Name = "UIWorkFlowForm";
             this.Text = "WorkFlow";
             this.Load += new System.EventHandler(this.WorkFlowForm_Load);
-            this.pnSearch.ResumeLayout(false);
+            this.pnRow1.ResumeLayout(false);
             this.pnSearchBox.ResumeLayout(false);
             this.pnBtnSearch.ResumeLayout(false);
-            this.pnButtonWorkFlow.ResumeLayout(false);
-            this.pnTable.ResumeLayout(false);
+            this.bnRow2.ResumeLayout(false);
+            this.pnRow3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
             this.ResumeLayout(false);
 
@@ -442,9 +466,9 @@
 
         #endregion
 
-        private Panel pnSearch;
-        private Panel pnButtonWorkFlow;
-        private Panel pnTable;
+        private Panel pnRow1;
+        private Panel bnRow2;
+        private Panel pnRow3;
         private Button btnSearch;
         private DataGridView dgvFlow;
         private Button btnStandBy;
@@ -467,5 +491,7 @@
         private DataGridViewTextBoxColumn AssignTo;
         private DataGridViewTextBoxColumn Pin;
         private DataGridViewTextBoxColumn Loaded;
+        private Panel topShadow;
+        private Panel panel1;
     }
 }
