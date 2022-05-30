@@ -15,5 +15,9 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblChildDevice.ToList();
         }
+        public List<ChildDevice> getByFp(int fpId)
+        {
+            return _dataContext.tblChildDevice.Where(x => x.id == fpId).ToList();
+        }
     }
 }

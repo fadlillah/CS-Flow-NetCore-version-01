@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CS_Flow.Models;
+using CS_Flow.Manager;
 
 namespace CS_Flow.UI
 {
     public partial class UIFillingPointForm : Form
     {
+        public static Form formFillingPoint;
+        public static DataGridView dataFillingPoint;
+        public static List<FillingPointDetail> _fillingPointDetails;
+        public static FillingPointDetailManager _FillingPointDetailManager;
+
+        //
+        public static DataGridView dataGridFillingPoint;
         public UIFillingPointForm()
         {
            InitializeComponent();
+            formFillingPoint = this;
+            dataFillingPoint = this.dgvFilling;
+            _fillingPointDetails = new List<FillingPointDetail>();
+            _FillingPointDetailManager = new FillingPointDetailManager();
+            dataGridFillingPoint = this.dgvFilling;
         }
 
         //Start Search Box Place Holder
@@ -46,6 +60,33 @@ namespace CS_Flow.UI
         private void FillingPoint_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static void loadDataFillingPoint(List<FillingPointDetail> fillingPoints)
+        {
+            dataGridFillingPoint.Rows.Clear();
+            if (fillingPoints != null)
+            {
+                foreach (FillingPointDetail fp in fillingPoints)
+                {
+                    dataGridFillingPoint.Rows.Add(fp.name, fp.Product, fp.Status, fp.Flowrate, fp.tank_temperature, fp.LiquidPressure, fp.LiquidDensity, fp.LiquidTotalizer, fp.Batch, fp.Preset, fp.Today, fp.SafetyCircuit1, fp.SafetyCircuit2);
+                }
+            }
+            
+        }
+        public static void updateFillingPoint(int index, string Status, int Temp)
+        {
+            try
+            {
+                dataGridFillingPoint.Rows[index].Cells[2].Value = Status;
+                dataGridFillingPoint.Rows[index].Cells[3].Value = Temp;
+                dataGridFillingPoint.Update();
+            }
+            catch
+            {
+
+            }
+            
         }
 
     }

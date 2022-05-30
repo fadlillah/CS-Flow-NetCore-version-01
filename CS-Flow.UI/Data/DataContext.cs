@@ -17,6 +17,7 @@ namespace CS_Flow.Data
         public virtual DbSet<FillingBatch> tblFillingBatch { get; set; }
         public virtual DbSet<FillingPoint> tblFillingPoint { get; set; }
         public virtual DbSet<ChildDevice> tblChildDevice { get; set; }
-
+        public virtual DbSet<FillingSession> tblFillingSession { get; set; }
+        public virtual DbSet<EventLog> tblEventLog { get; set; }
     }
 }

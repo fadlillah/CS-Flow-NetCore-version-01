@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnSideBar = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnGraphical = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.btnWindowSize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnContent = new System.Windows.Forms.Panel();
+            this.tm_ack = new System.Windows.Forms.Timer(this.components);
             this.pnSideBar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnTopBar.SuspendLayout();
@@ -72,7 +74,7 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnSettings.Image = global::CS_Flow.UI.Properties.Resources.icSettings;
+            this.btnSettings.Image = global::CS_Flow.Properties.Resources.icSettings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.Location = new System.Drawing.Point(0, 430);
             this.btnSettings.Name = "btnSettings";
@@ -92,7 +94,7 @@
             this.btnGraphical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGraphical.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGraphical.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnGraphical.Image = global::CS_Flow.UI.Properties.Resources.icGraphics;
+            this.btnGraphical.Image = global::CS_Flow.Properties.Resources.icGraphics;
             this.btnGraphical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGraphical.Location = new System.Drawing.Point(0, 310);
             this.btnGraphical.Name = "btnGraphical";
@@ -112,7 +114,7 @@
             this.btnEventLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventLog.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEventLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnEventLog.Image = global::CS_Flow.UI.Properties.Resources.icEventLog;
+            this.btnEventLog.Image = global::CS_Flow.Properties.Resources.icEventLog;
             this.btnEventLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventLog.Location = new System.Drawing.Point(0, 260);
             this.btnEventLog.Name = "btnEventLog";
@@ -132,7 +134,7 @@
             this.btnMeterReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeterReading.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMeterReading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnMeterReading.Image = global::CS_Flow.UI.Properties.Resources.icMeterReading;
+            this.btnMeterReading.Image = global::CS_Flow.Properties.Resources.icMeterReading;
             this.btnMeterReading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMeterReading.Location = new System.Drawing.Point(0, 210);
             this.btnMeterReading.Name = "btnMeterReading";
@@ -152,7 +154,7 @@
             this.btnFillingPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFillingPoint.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFillingPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnFillingPoint.Image = global::CS_Flow.UI.Properties.Resources.icFillingPoint;
+            this.btnFillingPoint.Image = global::CS_Flow.Properties.Resources.icFillingPoint;
             this.btnFillingPoint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFillingPoint.Location = new System.Drawing.Point(0, 160);
             this.btnFillingPoint.Name = "btnFillingPoint";
@@ -172,7 +174,7 @@
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransaction.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnTransaction.Image = global::CS_Flow.UI.Properties.Resources.icTransaction;
+            this.btnTransaction.Image = global::CS_Flow.Properties.Resources.icTransaction;
             this.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransaction.Location = new System.Drawing.Point(0, 110);
             this.btnTransaction.Name = "btnTransaction";
@@ -192,7 +194,7 @@
             this.btnWorkFlow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkFlow.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnWorkFlow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.btnWorkFlow.Image = global::CS_Flow.UI.Properties.Resources.icWorkFlow;
+            this.btnWorkFlow.Image = global::CS_Flow.Properties.Resources.icWorkFlow;
             this.btnWorkFlow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWorkFlow.Location = new System.Drawing.Point(0, 60);
             this.btnWorkFlow.Name = "btnWorkFlow";
@@ -222,7 +224,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.label1.Location = new System.Drawing.Point(38, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 39);
+            this.label1.Size = new System.Drawing.Size(111, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "CS-Flow";
             // 
@@ -243,7 +245,7 @@
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::CS_Flow.UI.Properties.Resources.icMinimize;
+            this.btnMinimize.Image = global::CS_Flow.Properties.Resources.icMinimize;
             this.btnMinimize.Location = new System.Drawing.Point(502, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
@@ -257,7 +259,7 @@
             this.btnWindowSize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnWindowSize.FlatAppearance.BorderSize = 0;
             this.btnWindowSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWindowSize.Image = global::CS_Flow.UI.Properties.Resources.icRestoreDown;
+            this.btnWindowSize.Image = global::CS_Flow.Properties.Resources.icRestoreDown;
             this.btnWindowSize.Location = new System.Drawing.Point(532, 0);
             this.btnWindowSize.Name = "btnWindowSize";
             this.btnWindowSize.Size = new System.Drawing.Size(30, 30);
@@ -271,7 +273,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::CS_Flow.UI.Properties.Resources.icClose;
+            this.btnClose.Image = global::CS_Flow.Properties.Resources.icClose;
             this.btnClose.Location = new System.Drawing.Point(562, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
@@ -290,6 +292,11 @@
             this.pnContent.Size = new System.Drawing.Size(592, 450);
             this.pnContent.TabIndex = 2;
             // 
+            // tm_ack
+            // 
+            this.tm_ack.Interval = 500;
+            this.tm_ack.Tick += new System.EventHandler(this.tm_ack_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -297,11 +304,11 @@
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnTopBar);
             this.Controls.Add(this.pnSideBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
@@ -330,5 +337,6 @@
         private Button btnMinimize;
         private Button btnWindowSize;
         private Button btnClose;
+        private System.Windows.Forms.Timer tm_ack;
     }
 }

@@ -19,6 +19,10 @@ namespace CS_Flow.Manager
         {
             return _fillingBatchGateway.getStanby();
         }
+        public List<FillingBatch> getStandbyByFpPin(string Fp, int Pin )
+        {
+            return _fillingBatchGateway.getStandbyByFpPin(Fp, Pin);
+        }
         public List<FillingBatch> getInProgress()
         {
             return _fillingBatchGateway.getInProgress();

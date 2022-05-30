@@ -12,9 +12,11 @@ namespace CS_Flow.Gateway
     {
         DataContext _dataContext = new DataContext();
 
-        public List<ChildDevice> getAll()
+        public List<FillingPoint> getAll()
         {
-            return _dataContext.tblChildDevice.ToList();
+            return _dataContext.tblFillingPoint.ToList();
         }
+        
     }
 }
+

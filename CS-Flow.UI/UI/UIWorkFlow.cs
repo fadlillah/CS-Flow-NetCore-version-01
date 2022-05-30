@@ -14,10 +14,28 @@ namespace CS_Flow.UI
 {
     public partial class UIWorkFlowForm : Form
     {
+        public static Form instanceWorkflow;
+        public static DataGridView dataWorkflow;
+        public static Button currentBtnWorkFlow;
+        public List<FillingBatch> _fillingBatches;
+        private FillingBatchManager _fillingBatchManager;
         public UIWorkFlowForm()
         {
             InitializeComponent();
             searchBoxPlaceHolder();
+            instanceWorkflow = this;
+            dataWorkflow = this.dgvFlow;
+            currentBtnWorkFlow = new Button();
+            _fillingBatches = new List<FillingBatch>();
+
+        }
+        private void WorkFlowForm_Load(object sender, EventArgs e)
+        {
+            ActiveButtonWorkFlow(btnShowAll);
+            _fillingBatchManager = new FillingBatchManager();
+            _fillingBatches = _fillingBatchManager.getAll();
+            loadDataWorkFlow(_fillingBatches);
+            
         }
 
         //Start Search Box Place Holder
@@ -45,100 +63,13 @@ namespace CS_Flow.UI
             }
         }
         //End Search Box Place Holder
-
-        private void WorkFlowForm_Load(object sender, EventArgs e)
+       
+        public void loadDataWorkFlow(List<FillingBatch> fillingBatches)
         {
-            loadDataAll();
-        }
-
-        private void loadDataAll()
-        {
-            btnShowAll.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnStandBy.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInProgress.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInterrupted.BackColor = ColorTranslator.FromHtml("#242726");
-            btnCompleted.BackColor = ColorTranslator.FromHtml("#242726");
-
-            FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            var fillingBatches = fillingBatchManager.getAll();
-            dgvFlow.Rows.Clear();
-
+            dataWorkflow.Rows.Clear();
             foreach (FillingBatch fillingBatch in fillingBatches)
             {
-                dgvFlow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
-            }
-
-        }
-
-        private void loadDataStandby()
-        {
-            btnShowAll.BackColor = ColorTranslator.FromHtml("#242726");
-            btnStandBy.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnInProgress.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInterrupted.BackColor = ColorTranslator.FromHtml("#242726");
-            btnCompleted.BackColor = ColorTranslator.FromHtml("#242726");
-            
-            FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            var fillingBatches = fillingBatchManager.getStandBy();
-            dgvFlow.Rows.Clear();
-            
-            foreach (FillingBatch fillingBatch in fillingBatches)
-            {
-                dgvFlow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
-            }
-        }
-
-        private void loadDataInProgress()
-        {
-            btnShowAll.BackColor = ColorTranslator.FromHtml("#242726");
-            btnStandBy.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInProgress.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnInterrupted.BackColor = ColorTranslator.FromHtml("#242726");
-            btnCompleted.BackColor = ColorTranslator.FromHtml("#242726");
-            
-            FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            var fillingBatches = fillingBatchManager.getInProgress();
-            dgvFlow.Rows.Clear();
-            
-            foreach (FillingBatch fillingBatch in fillingBatches)
-            {
-                dgvFlow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
-            }
-        }
-
-        private void loadDatainterrupted()
-        {
-            btnShowAll.BackColor = ColorTranslator.FromHtml("#242726");
-            btnStandBy.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInProgress.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInterrupted.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnCompleted.BackColor = ColorTranslator.FromHtml("#242726");
-            
-            FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            var fillingBatches = fillingBatchManager.getInterupted();
-            dgvFlow.Rows.Clear();
-            
-            foreach (FillingBatch fillingBatch in fillingBatches)
-            {
-                dgvFlow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
-            }
-        }
-
-        private void loadDataCompleted()
-        {
-            btnShowAll.BackColor = ColorTranslator.FromHtml("#242726");
-            btnStandBy.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInProgress.BackColor = ColorTranslator.FromHtml("#242726");
-            btnInterrupted.BackColor = ColorTranslator.FromHtml("#242726");
-            btnCompleted.BackColor = ColorTranslator.FromHtml("#26324A");
-            
-            FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            var fillingBatches = fillingBatchManager.getStandBy();
-            dgvFlow.Rows.Clear();
-            
-            foreach (FillingBatch fillingBatch in fillingBatches)
-            {
-                dgvFlow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
+                dataWorkflow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
             }
         }
 
@@ -157,34 +88,101 @@ namespace CS_Flow.UI
             }
            
         }
+        //
+        //Button control Workflow
+        private void ActiveButtonWorkFlow(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentBtnWorkFlow != (Button)btnSender)
+                {
+                    DisableButton();
+                    currentBtnWorkFlow = (Button)btnSender;
+                    currentBtnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+                    currentBtnWorkFlow.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in pnButtonWorkFlow.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = ColorTranslator.FromHtml("#242726");
+                    previousBtn.Font = new System.Drawing.Font("Lato", 9.7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            
-            loadDataAll();
+            ActiveButtonWorkFlow(sender);
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            _fillingBatches = fillingBatchManager.getAll();
+            loadDataWorkFlow(_fillingBatches);
         }
 
         private void btnStandBy_Click(object sender, EventArgs e)
         {
-            
-            loadDataStandby();
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            ActiveButtonWorkFlow(sender);
+            _fillingBatches = fillingBatchManager.getStandBy();
+            loadDataWorkFlow(_fillingBatches);
         }
 
         private void btnInProgress_Click(object sender, EventArgs e)
         {
-            
-            loadDataInProgress();
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            ActiveButtonWorkFlow(sender);
+            _fillingBatches = fillingBatchManager.getInProgress();
+            loadDataWorkFlow(_fillingBatches);
         }
 
         private void btnInterrupted_Click(object sender, EventArgs e)
         {
-            
-            loadDatainterrupted();
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            ActiveButtonWorkFlow(sender);
+            _fillingBatches = fillingBatchManager.getInterupted();
+            loadDataWorkFlow(_fillingBatches);
         }
 
         private void btnCompleted_Click(object sender, EventArgs e)
         {
-            loadDataCompleted();
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            ActiveButtonWorkFlow(sender);
+            _fillingBatches = fillingBatchManager.getInProgress();
+            loadDataWorkFlow(_fillingBatches);
+        }
+        public void updateWorkFlow()
+        {
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            if (currentBtnWorkFlow.Name == "btnShowAll")
+            {
+                _fillingBatches = fillingBatchManager.getAll();
+                loadDataWorkFlow(_fillingBatches);
+            }
+            else if (currentBtnWorkFlow.Name == "btnStandBy")
+            {
+                _fillingBatches = fillingBatchManager.getStandBy();
+                loadDataWorkFlow(_fillingBatches);
+            }
+            else if (currentBtnWorkFlow.Name == "btnInProgress")
+            {
+                _fillingBatches = fillingBatchManager.getInProgress();
+                loadDataWorkFlow(_fillingBatches);
+            }
+            else if (currentBtnWorkFlow.Name == "btnInterrupted")
+            {
+                _fillingBatches = fillingBatchManager.getInterupted();
+                loadDataWorkFlow(_fillingBatches);
+            }
+            else if (currentBtnWorkFlow.Name == "btnCompleted")
+            {
+                _fillingBatches = fillingBatchManager.getInProgress();
+                loadDataWorkFlow(_fillingBatches);
+            }
+
         }
 
         

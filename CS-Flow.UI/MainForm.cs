@@ -1,45 +1,41 @@
 using CS_Flow.Manager;
 using CS_Flow.Models;
-
+using System.Threading;
 namespace CS_Flow.UI
 {
     public partial class MainForm : Form
     {
-        FillingBatchManager _fillingBatchManager = new FillingBatchManager();
-        public List<FillingBatch> fillingBatches = new List<FillingBatch>();
+        //Field Object CS_Flow
+        private FillingBatchManager _fillingBatchManager;
+        private List<FillingBatch> _fillingBatches;
+        private List<FillingPointDetail> _fillingPointDetails;
+        private FillingPointDetailManager fillingPointDetailManager;
 
+        //Field Object Toolbox blue print
+        private Button currentButton;
+        private int TempIndex;
+        private Form activeForm;
+
+        //Field Activation
         bool mouseDown;
         private Point lastLocation;
+
+        //thread
+        private Thread _ThreadBC;
+        private Thread _ThreadLoading;
 
         public MainForm()
         {
             InitializeComponent();
-            includeForm<UIWorkFlowForm>();
+            //includeForm<UIWorkFlowForm>();
+            OpenChildForm(new UIWorkFlowForm(), btnWorkFlow);
+            
             btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
+            _fillingBatchManager = new FillingBatchManager();
+            _fillingBatches = new List<FillingBatch>();
+            _fillingPointDetails = new List<FillingPointDetail>();
 
         }
-
-        private void includeForm<MiForm>() where MiForm : Form, new()
-        {
-            Form content;
-            content = pnContent.Controls.OfType<MiForm>().FirstOrDefault();
-            if (content == null)
-            {
-                content = new MiForm();
-                content.TopLevel = false;
-                content.FormBorderStyle = FormBorderStyle.None;
-                content.Dock = DockStyle.Fill;
-                pnContent.Controls.Add(content);
-                pnContent.Tag = content;
-                content.Show();
-                content.BringToFront();
-            }
-            else
-            {
-                content.BringToFront();
-            }
-        }
-
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -56,13 +52,30 @@ namespace CS_Flow.UI
             }
         }
 
+
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            loadFillingPoint();
+            tm_ack.Enabled = true;
+            _ThreadBC = new Thread(t=>fillingPointDetailManager.updateConnection());
+            _ThreadLoading = new Thread(t => fillingPointDetailManager.updateDataBC());
+            _ThreadBC.Start();
+            _ThreadLoading.Start();
+            Sliding();
+
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            tm_ack.Enabled = false;
+            fillingPointDetailManager.stopBC();
+            _ThreadBC.Abort();
+            _ThreadLoading.Abort();
             this.Close();
         }
 
@@ -87,98 +100,147 @@ namespace CS_Flow.UI
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        #region Button MenuBar
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            includeForm<UISettingsForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#242726");
+            OpenChildForm(new UISettingsForm(), sender);
         }
 
         private void btnGraphical_Click(object sender, EventArgs e)
         {
-            includeForm<UIGraphicalForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#242726");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UIGraphicalForm(), sender);
         }
 
         private void btnEventLog_Click(object sender, EventArgs e)
         {
-            includeForm<UIEventLogForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#242726");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UIEventLogForm(), sender);
         }
 
         private void btnMeterReading_Click(object sender, EventArgs e)
         {
-            includeForm<UIMeterReadingForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#242726");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UIMeterReadingForm(), sender);
         }
 
         private void btnFillingPoint_Click(object sender, EventArgs e)
         {
-            includeForm<UIFillingPointForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#242726");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UIFillingPointForm(), sender);
+            UIFillingPointForm.loadDataFillingPoint(_fillingPointDetails);
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            includeForm<UITransactionForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#242726");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UITransactionForm(), sender);
         }
 
         private void btnWorkFlow_Click(object sender, EventArgs e)
         {
-            includeForm<UIWorkFlowForm>();
-            btnWorkFlow.BackColor = ColorTranslator.FromHtml("#242726");
-            btnTransaction.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnFillingPoint.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnMeterReading.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnEventLog.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnGraphical.BackColor = ColorTranslator.FromHtml("#26324A");
-            btnSettings.BackColor = ColorTranslator.FromHtml("#26324A");
+            OpenChildForm(new UIWorkFlowForm(), sender);
         }
-        
+        #endregion 
         private void LoadDataAll()
         {
             FillingBatchManager fillingBatchManager = new FillingBatchManager();
-            fillingBatches = fillingBatchManager.getAll();
+            _fillingBatches = fillingBatchManager.getAll();
             
         }
+        private void updateTableFillingPoint()
+        {
+            UIFillingPointForm.dataFillingPoint.Rows.Clear();
 
+        }
+        //Realtime timer
+        private void tm_ack_Tick(object sender, EventArgs e)
+        {
+            //fillingPointDetailManager.updateConnection();
+            if (currentButton.Name == "btnFillingPoint")
+            {
+                realTimeFillingPoint();
+            }
+
+
+
+            //updateTableFillingPoint();
+            //var activeBt = currentButton;
+            //var activeFm = activeForm;
+        }
         
+        private void ActiveButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton !=(Button)btnSender)
+                {
+                    DisableButton();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = ColorTranslator.FromHtml("#242726");
+                    currentButton.Font = new System.Drawing.Font("Lato", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }                
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in pnSideBar.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = ColorTranslator.FromHtml("#26324A");
+                    previousBtn.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActiveButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnContent.Controls.Add(childForm);
+            this.pnContent.Dock = DockStyle.Fill;
+            this.pnContent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            
+        }
+        #region Filling Point Controll
+        private void loadFillingPoint()
+        {
+            fillingPointDetailManager = new FillingPointDetailManager();
+            fillingPointDetailManager.Init();
+            _fillingPointDetails = fillingPointDetailManager.GetFillingPointDetails();
+        }
+        private void realTimeFillingPoint()
+        {
+            if (_fillingPointDetails != null)
+            {
+                for(int inc=0; inc < _fillingPointDetails.Count; inc++)
+                {
+                    UIFillingPointForm.updateFillingPoint(inc, _fillingPointDetails[inc].Status, (int)_fillingPointDetails[inc].tank_temperature);
+                }
+            }
+        }
+        #endregion
+        private void Sliding()
+        {
+            int destinationX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (this.Width / 2);
+            int destinationY = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
+
+            Point newLocation = new Point(destinationX, destinationY + this.Height);
+
+            new Thread(new ThreadStart(() =>
+            {
+                do
+                {
+                    // this line needs to be executed in the UI thread, hence we use Invoke
+                    this.Invoke(new Action(() => { this.Location = newLocation; }));
+
+                    newLocation = new Point(destinationX, newLocation.Y - 1);
+                    Thread.Sleep(100);
+                }
+                while (newLocation != new Point(destinationX, destinationY));
+            })).Start();
+        }
     }
 }

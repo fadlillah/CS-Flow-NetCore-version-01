@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnSearch = new System.Windows.Forms.Panel();
             this.pnSearchBox = new System.Windows.Forms.Panel();
             this.rtbSearch = new System.Windows.Forms.RichTextBox();
             this.pnSplitterSearchBar = new System.Windows.Forms.Panel();
             this.pnBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnButtonWorkFlow = new System.Windows.Forms.Panel();
             this.btnCompleted = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInterrupted = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.pnSearch.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnButtonWorkFlow.SuspendLayout();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
             this.SuspendLayout();
@@ -139,24 +139,24 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // pnButtonWorkFlow
             // 
-            this.panel2.Controls.Add(this.btnCompleted);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.btnInterrupted);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.btnInProgress);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.btnStandBy);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.btnShowAll);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 30);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.panel2.Size = new System.Drawing.Size(800, 60);
-            this.panel2.TabIndex = 1;
+            this.pnButtonWorkFlow.Controls.Add(this.btnCompleted);
+            this.pnButtonWorkFlow.Controls.Add(this.panel6);
+            this.pnButtonWorkFlow.Controls.Add(this.btnInterrupted);
+            this.pnButtonWorkFlow.Controls.Add(this.panel5);
+            this.pnButtonWorkFlow.Controls.Add(this.btnInProgress);
+            this.pnButtonWorkFlow.Controls.Add(this.panel4);
+            this.pnButtonWorkFlow.Controls.Add(this.btnStandBy);
+            this.pnButtonWorkFlow.Controls.Add(this.panel3);
+            this.pnButtonWorkFlow.Controls.Add(this.btnShowAll);
+            this.pnButtonWorkFlow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnButtonWorkFlow.Location = new System.Drawing.Point(0, 30);
+            this.pnButtonWorkFlow.Margin = new System.Windows.Forms.Padding(0);
+            this.pnButtonWorkFlow.Name = "pnButtonWorkFlow";
+            this.pnButtonWorkFlow.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.pnButtonWorkFlow.Size = new System.Drawing.Size(800, 60);
+            this.pnButtonWorkFlow.TabIndex = 1;
             // 
             // btnCompleted
             // 
@@ -292,21 +292,21 @@
             this.dgvFlow.AllowUserToDeleteRows = false;
             this.dgvFlow.AllowUserToResizeColumns = false;
             this.dgvFlow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFlow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvFlow.ColumnHeadersHeight = 50;
             this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -317,14 +317,14 @@
             this.AssignTo,
             this.Pin,
             this.Loaded});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFlow.EnableHeadersVisualStyles = false;
             this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
@@ -334,23 +334,23 @@
             this.dgvFlow.Name = "dgvFlow";
             this.dgvFlow.ReadOnly = true;
             this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvFlow.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvFlow.RowTemplate.Height = 40;
             this.dgvFlow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFlow.Size = new System.Drawing.Size(800, 360);
@@ -418,22 +418,22 @@
             this.Loaded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Loaded.Width = 150;
             // 
-            // WorkFlowForm
+            // UIWorkFlowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnTable);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnButtonWorkFlow);
             this.Controls.Add(this.pnSearch);
-            this.Name = "WorkFlowForm";
+            this.Name = "UIWorkFlowForm";
             this.Text = "WorkFlow";
             this.Load += new System.EventHandler(this.WorkFlowForm_Load);
             this.pnSearch.ResumeLayout(false);
             this.pnSearchBox.ResumeLayout(false);
             this.pnBtnSearch.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnButtonWorkFlow.ResumeLayout(false);
             this.pnTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
             this.ResumeLayout(false);
@@ -443,7 +443,7 @@
         #endregion
 
         private Panel pnSearch;
-        private Panel panel2;
+        private Panel pnButtonWorkFlow;
         private Panel pnTable;
         private Button btnSearch;
         private DataGridView dgvFlow;

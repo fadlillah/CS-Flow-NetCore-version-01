@@ -19,6 +19,10 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 0).ToList();
         }
+        public List<FillingBatch> getStandbyByFpPin(string Fp, int Pin)
+        {
+            return _dataContext.tblFillingBatch.Where(x => x.status == 0 && x.filling_point == Fp && x.pin == Pin.ToString()).ToList();
+        }
         public List<FillingBatch> getInProgress()
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 1 || x.status==2).ToList();

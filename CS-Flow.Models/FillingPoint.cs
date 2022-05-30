@@ -12,7 +12,7 @@ namespace CS_Flow.Models
         public string name { get; set; }
         public string fgroup { get; set; }
         public string product { get; set; }
-        public int enable { get; set; }
+        public int enabled { get; set; }
         public string tank { get; set; }
         public decimal tank_temperature { get; set; }
         public decimal tank_density { get; set; }
