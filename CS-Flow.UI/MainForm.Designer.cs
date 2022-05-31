@@ -224,7 +224,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(35, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 41);
+            this.label1.Size = new System.Drawing.Size(103, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "CS-Flow";
             // 
@@ -237,7 +237,7 @@
             this.pnTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTopBar.Location = new System.Drawing.Point(180, 0);
             this.pnTopBar.Name = "pnTopBar";
-            this.pnTopBar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnTopBar.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.pnTopBar.Size = new System.Drawing.Size(592, 40);
             this.pnTopBar.TabIndex = 1;
             // 
@@ -247,7 +247,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::CS_Flow.Properties.Resources.icMinimize;
-            this.btnMinimize.Location = new System.Drawing.Point(502, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(497, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 2;
@@ -261,7 +261,7 @@
             this.btnWindowSize.FlatAppearance.BorderSize = 0;
             this.btnWindowSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWindowSize.Image = global::CS_Flow.Properties.Resources.icRestoreDown;
-            this.btnWindowSize.Location = new System.Drawing.Point(532, 5);
+            this.btnWindowSize.Location = new System.Drawing.Point(527, 5);
             this.btnWindowSize.Name = "btnWindowSize";
             this.btnWindowSize.Size = new System.Drawing.Size(30, 30);
             this.btnWindowSize.TabIndex = 1;
@@ -275,7 +275,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::CS_Flow.Properties.Resources.icClose;
-            this.btnClose.Location = new System.Drawing.Point(562, 5);
+            this.btnClose.Location = new System.Drawing.Point(557, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 0;

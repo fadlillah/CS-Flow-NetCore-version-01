@@ -79,7 +79,7 @@
             this.pnRow1.Location = new System.Drawing.Point(0, 0);
             this.pnRow1.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow1.Name = "pnRow1";
-            this.pnRow1.Padding = new System.Windows.Forms.Padding(40, 5, 40, 0);
+            this.pnRow1.Padding = new System.Windows.Forms.Padding(30, 10, 30, 0);
             this.pnRow1.Size = new System.Drawing.Size(800, 40);
             this.pnRow1.TabIndex = 0;
             // 
@@ -88,10 +88,10 @@
             this.pnSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.pnSearchBox.Controls.Add(this.rtbSearch);
             this.pnSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSearchBox.Location = new System.Drawing.Point(40, 5);
+            this.pnSearchBox.Location = new System.Drawing.Point(30, 10);
             this.pnSearchBox.Name = "pnSearchBox";
             this.pnSearchBox.Padding = new System.Windows.Forms.Padding(25, 7, 0, 5);
-            this.pnSearchBox.Size = new System.Drawing.Size(615, 35);
+            this.pnSearchBox.Size = new System.Drawing.Size(635, 30);
             this.pnSearchBox.TabIndex = 3;
             // 
             // rtbSearch
@@ -104,7 +104,7 @@
             this.rtbSearch.Location = new System.Drawing.Point(25, 7);
             this.rtbSearch.Multiline = false;
             this.rtbSearch.Name = "rtbSearch";
-            this.rtbSearch.Size = new System.Drawing.Size(590, 23);
+            this.rtbSearch.Size = new System.Drawing.Size(610, 18);
             this.rtbSearch.TabIndex = 0;
             this.rtbSearch.Text = "Type Here ...";
             this.rtbSearch.Enter += new System.EventHandler(this.rtbSearch_Enter);
@@ -113,18 +113,18 @@
             // pnSplitterSearchBar
             // 
             this.pnSplitterSearchBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSplitterSearchBar.Location = new System.Drawing.Point(655, 5);
+            this.pnSplitterSearchBar.Location = new System.Drawing.Point(665, 10);
             this.pnSplitterSearchBar.Name = "pnSplitterSearchBar";
-            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 35);
+            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 30);
             this.pnSplitterSearchBar.TabIndex = 5;
             // 
             // pnBtnSearch
             // 
             this.pnBtnSearch.Controls.Add(this.btnSearch);
             this.pnBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBtnSearch.Location = new System.Drawing.Point(660, 5);
+            this.pnBtnSearch.Location = new System.Drawing.Point(670, 10);
             this.pnBtnSearch.Name = "pnBtnSearch";
-            this.pnBtnSearch.Size = new System.Drawing.Size(100, 35);
+            this.pnBtnSearch.Size = new System.Drawing.Size(100, 30);
             this.pnBtnSearch.TabIndex = 4;
             // 
             // btnSearch
@@ -137,7 +137,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.Location = new System.Drawing.Point(0, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 35);
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -158,7 +158,7 @@
             this.pnRow2.Location = new System.Drawing.Point(0, 40);
             this.pnRow2.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow2.Name = "pnRow2";
-            this.pnRow2.Padding = new System.Windows.Forms.Padding(40, 15, 0, 15);
+            this.pnRow2.Padding = new System.Windows.Forms.Padding(30, 15, 0, 15);
             this.pnRow2.Size = new System.Drawing.Size(800, 60);
             this.pnRow2.TabIndex = 1;
             // 
@@ -170,7 +170,7 @@
             this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompleted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCompleted.Location = new System.Drawing.Point(460, 15);
+            this.btnCompleted.Location = new System.Drawing.Point(450, 15);
             this.btnCompleted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnCompleted.Name = "btnCompleted";
             this.btnCompleted.Size = new System.Drawing.Size(100, 30);
@@ -182,7 +182,7 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(455, 15);
+            this.panel6.Location = new System.Drawing.Point(445, 15);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 30);
             this.panel6.TabIndex = 12;
@@ -195,7 +195,7 @@
             this.btnInterrupted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterrupted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInterrupted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInterrupted.Location = new System.Drawing.Point(355, 15);
+            this.btnInterrupted.Location = new System.Drawing.Point(345, 15);
             this.btnInterrupted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInterrupted.Name = "btnInterrupted";
             this.btnInterrupted.Size = new System.Drawing.Size(100, 30);
@@ -207,7 +207,7 @@
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(350, 15);
+            this.panel5.Location = new System.Drawing.Point(340, 15);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 30);
             this.panel5.TabIndex = 10;
@@ -220,7 +220,7 @@
             this.btnInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInProgress.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInProgress.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInProgress.Location = new System.Drawing.Point(250, 15);
+            this.btnInProgress.Location = new System.Drawing.Point(240, 15);
             this.btnInProgress.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInProgress.Name = "btnInProgress";
             this.btnInProgress.Size = new System.Drawing.Size(100, 30);
@@ -232,7 +232,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(245, 15);
+            this.panel4.Location = new System.Drawing.Point(235, 15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 30);
             this.panel4.TabIndex = 8;
@@ -245,7 +245,7 @@
             this.btnStandBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStandBy.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStandBy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStandBy.Location = new System.Drawing.Point(145, 15);
+            this.btnStandBy.Location = new System.Drawing.Point(135, 15);
             this.btnStandBy.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnStandBy.Name = "btnStandBy";
             this.btnStandBy.Size = new System.Drawing.Size(100, 30);
@@ -257,7 +257,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(140, 15);
+            this.panel3.Location = new System.Drawing.Point(130, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 30);
             this.panel3.TabIndex = 6;
@@ -270,7 +270,7 @@
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnShowAll.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnShowAll.Location = new System.Drawing.Point(40, 15);
+            this.btnShowAll.Location = new System.Drawing.Point(30, 15);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(100, 30);
@@ -310,7 +310,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -330,7 +330,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
