@@ -15,6 +15,10 @@ namespace CS_Flow.Manager
         {
             return _fillingSessionGateway.getAll();
         }
+        public FillingSession getLoaded(int FpId, int fbId)
+        {
+            return _fillingSessionGateway.getByLoaded(FpId, fbId);
+        }
         public bool StartLoaded(int StartTot, FillingPointDetail fpd, ChildDevice cd, FillingBatch Fb)
         {
             FillingSession fillingSession = new FillingSession();
@@ -25,6 +29,10 @@ namespace CS_Flow.Manager
             fillingSession.preset = Fb.preset;
             fillingSession.tank_supply = "";
             return _fillingSessionGateway.Insert(fillingSession);
+        }
+        public bool Complete(FillingSession fs)
+        {
+            return _fillingSessionGateway.Update(fs);
         }
     }
 }

@@ -27,6 +27,10 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 1 || x.status==2).ToList();
         }
+        public FillingBatch getProgressOnFp (string FpName)
+        {
+            return _dataContext.tblFillingBatch.FirstOrDefault(x => x.filling_point == FpName && x.status == 2);
+        }
         public List<FillingBatch> getInterupted()
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 3).ToList();
