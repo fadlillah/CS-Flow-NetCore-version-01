@@ -237,7 +237,8 @@
             this.pnTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTopBar.Location = new System.Drawing.Point(180, 0);
             this.pnTopBar.Name = "pnTopBar";
-            this.pnTopBar.Size = new System.Drawing.Size(592, 30);
+            this.pnTopBar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnTopBar.Size = new System.Drawing.Size(592, 40);
             this.pnTopBar.TabIndex = 1;
             // 
             // btnMinimize
@@ -246,7 +247,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::CS_Flow.Properties.Resources.icMinimize;
-            this.btnMinimize.Location = new System.Drawing.Point(502, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(502, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 2;
@@ -260,7 +261,7 @@
             this.btnWindowSize.FlatAppearance.BorderSize = 0;
             this.btnWindowSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWindowSize.Image = global::CS_Flow.Properties.Resources.icRestoreDown;
-            this.btnWindowSize.Location = new System.Drawing.Point(532, 0);
+            this.btnWindowSize.Location = new System.Drawing.Point(532, 5);
             this.btnWindowSize.Name = "btnWindowSize";
             this.btnWindowSize.Size = new System.Drawing.Size(30, 30);
             this.btnWindowSize.TabIndex = 1;
@@ -274,7 +275,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::CS_Flow.Properties.Resources.icClose;
-            this.btnClose.Location = new System.Drawing.Point(562, 0);
+            this.btnClose.Location = new System.Drawing.Point(562, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 0;
@@ -287,9 +288,9 @@
             this.pnContent.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnContent.Location = new System.Drawing.Point(180, 30);
+            this.pnContent.Location = new System.Drawing.Point(180, 40);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(592, 450);
+            this.pnContent.Size = new System.Drawing.Size(592, 440);
             this.pnContent.TabIndex = 2;
             // 
             // tm_ack

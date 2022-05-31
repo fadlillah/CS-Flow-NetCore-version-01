@@ -52,6 +52,7 @@
             this.btnShowAll = new System.Windows.Forms.Button();
             this.pnRow3 = new System.Windows.Forms.Panel();
             this.dgvFlow = new System.Windows.Forms.DataGridView();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Truck = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,6 @@
             this.AssignTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnRow1.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
@@ -296,18 +296,21 @@
             this.dgvFlow.AllowUserToDeleteRows = false;
             this.dgvFlow.AllowUserToResizeColumns = false;
             this.dgvFlow.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFlow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -315,18 +318,19 @@
             this.dgvFlow.ColumnHeadersHeight = 50;
             this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.status,
             this.Order,
             this.Truck,
             this.Product,
             this.Preset,
             this.AssignTo,
             this.Pin,
-            this.Loaded,
-            this.status});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Loaded});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -340,7 +344,7 @@
             this.dgvFlow.Name = "dgvFlow";
             this.dgvFlow.ReadOnly = true;
             this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
@@ -349,7 +353,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFlow.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
@@ -362,6 +366,13 @@
             this.dgvFlow.Size = new System.Drawing.Size(800, 350);
             this.dgvFlow.TabIndex = 0;
             this.dgvFlow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlow_CellClick);
+            this.dgvFlow.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvFlow_CellFormatting);
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // Order
             // 
@@ -419,12 +430,6 @@
             this.Loaded.ReadOnly = true;
             this.Loaded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
             // UIWorkFlowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -467,6 +472,7 @@
         private RichTextBox rtbSearch;
         private Panel pnSplitterSearchBar;
         private Panel pnBtnSearch;
+        private DataGridViewTextBoxColumn status;
         private DataGridViewTextBoxColumn Order;
         private DataGridViewTextBoxColumn Truck;
         private DataGridViewTextBoxColumn Product;
@@ -474,6 +480,5 @@
         private DataGridViewTextBoxColumn AssignTo;
         private DataGridViewTextBoxColumn Pin;
         private DataGridViewTextBoxColumn Loaded;
-        private DataGridViewTextBoxColumn status;
     }
 }

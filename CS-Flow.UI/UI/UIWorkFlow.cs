@@ -69,7 +69,33 @@ namespace CS_Flow.UI
             dataWorkflow.Rows.Clear();
             foreach (FillingBatch fillingBatch in fillingBatches)
             {
-                dataWorkflow.Rows.Add(fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
+                string status = "";
+                if (fillingBatch.status == 0)
+                {
+                    status = "Standby";
+                }
+                else if(fillingBatch.status == 1)
+                {
+                    status = "Authorized";
+                }
+                else if(fillingBatch.status == 2)
+                {
+                    status = "In Progress";
+                }
+                if (fillingBatch.status == 3)
+                {
+                    status = "Interrupted";
+                }
+                if (fillingBatch.status == 4)
+                {
+                    status = "Completed";
+                }
+                if (fillingBatch.status == 5)
+                {
+                    status = "Gate Out";
+                }
+
+                dataWorkflow.Rows.Add(status, fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
             }
         }
 
@@ -188,6 +214,9 @@ namespace CS_Flow.UI
 
         }
 
-        
+        private void dgvFlow_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+        }
     }
 }
