@@ -180,7 +180,7 @@ namespace CS_Flow.UI
         {
             FillingBatchManager fillingBatchManager = new FillingBatchManager();
             ActiveButtonWorkFlow(sender);
-            _fillingBatches = fillingBatchManager.getInProgress();
+            _fillingBatches = fillingBatchManager.getCompleted();
             loadDataWorkFlow(_fillingBatches);
         }
         public void updateWorkFlow()

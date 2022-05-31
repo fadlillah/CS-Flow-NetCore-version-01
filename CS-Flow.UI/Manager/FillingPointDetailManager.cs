@@ -158,13 +158,25 @@ namespace CS_Flow.Manager
                                         }
                                         if (_danloadLibs[inc].DanloadStatus == "END_TRANSACTION_STATE")
                                         {
-                                            List<FillingBatch> fillingBatchs = new List<FillingBatch>();
-                                            fillingBatchs = _FillingBatchManager.getStandbyByFpPin(fpd.name, _danloadLibs[inc].KeyEnter);
-                                            if (fillingBatchs.Count == 1)
+                                            //update filling batch to complete
+                                            FillingBatch fillingBatch = new FillingBatch();
+                                            fillingBatch = _FillingBatchManager.getProgressByFp(fpd.name);
+                                            if(fillingBatch != null)
                                             {
-                                             _FillingBatchManager.UpdateStatus(fillingBatchs[0].order_id, 4);
-                                             _danloadLibs[inc].startDanload();
+                                                _FillingBatchManager.UpdateStatus(fillingBatch.order_id, 4);
+                                                
+                                                //update session to complete 
+                                                FillingSession fs = new FillingSession();
+                                                fs = _fillingSessionManager.getLoaded(fpd.id, fillingBatch.id);
+                                                fs.stop_time = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
+                                                fs.stop_totalizer = _danloadLibs[inc].GrossTotal;
+                                                fs.loaded = fs.stop_totalizer - fs.start_totalizer;
+                                                fs.temperature = _danloadLibs[inc].temp10;
+                                                fs.density = _danloadLibs[inc].dens;                                                
+                                                _fillingSessionManager.Complete(fs);
+
                                             }
+
                                         }
                                     }                                    
                                 }

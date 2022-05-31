@@ -27,6 +27,10 @@ namespace CS_Flow.Manager
         {
             return _fillingBatchGateway.getInProgress();
         }
+        public FillingBatch getProgressByFp(string fpName)
+        {
+            return _fillingBatchGateway.getProgressOnFp(fpName);
+        }
         public List<FillingBatch> getInterupted()
         {
             return _fillingBatchGateway.getInterupted();
