@@ -89,6 +89,7 @@ namespace CS_Flow.UI
            
         }
         //
+
         //Button control Workflow
         private void ActiveButtonWorkFlow(object btnSender)
         {
@@ -98,20 +99,22 @@ namespace CS_Flow.UI
                 {
                     DisableButton();
                     currentBtnWorkFlow = (Button)btnSender;
-                    currentBtnWorkFlow.BackColor = ColorTranslator.FromHtml("#26324A");
+                    currentBtnWorkFlow.BackColor = ColorTranslator.FromHtml("#1e2632");
                     currentBtnWorkFlow.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentBtnWorkFlow.ForeColor = ColorTranslator.FromHtml("#f5f5f5");
 
                 }
             }
         }
         private void DisableButton()
         {
-            foreach (Control previousBtn in bnRow2.Controls)
+            foreach (Control previousBtn in pnRow2.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = ColorTranslator.FromHtml("#242726");
+                    previousBtn.BackColor = ColorTranslator.FromHtml("#f5f5f5");
                     previousBtn.Font = new System.Drawing.Font("Lato", 9.7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.ForeColor = ColorTranslator.FromHtml("#1e2632");
                 }
             }
         }

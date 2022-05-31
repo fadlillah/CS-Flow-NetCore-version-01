@@ -30,18 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnRow1 = new System.Windows.Forms.Panel();
-            this.topShadow = new System.Windows.Forms.Panel();
             this.pnSearchBox = new System.Windows.Forms.Panel();
             this.rtbSearch = new System.Windows.Forms.RichTextBox();
             this.pnSplitterSearchBar = new System.Windows.Forms.Panel();
             this.pnBtnSearch = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.bnRow2 = new System.Windows.Forms.Panel();
+            this.pnRow2 = new System.Windows.Forms.Panel();
             this.btnCompleted = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInterrupted = new System.Windows.Forms.Button();
@@ -60,10 +59,11 @@
             this.AssignTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnRow1.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
-            this.bnRow2.SuspendLayout();
+            this.pnRow2.SuspendLayout();
             this.pnRow3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,6 @@
             // pnRow1
             // 
             this.pnRow1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnRow1.Controls.Add(this.topShadow);
             this.pnRow1.Controls.Add(this.pnSearchBox);
             this.pnRow1.Controls.Add(this.pnSplitterSearchBar);
             this.pnRow1.Controls.Add(this.pnBtnSearch);
@@ -80,28 +79,19 @@
             this.pnRow1.Location = new System.Drawing.Point(0, 0);
             this.pnRow1.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow1.Name = "pnRow1";
-            this.pnRow1.Padding = new System.Windows.Forms.Padding(20, 5, 20, 0);
-            this.pnRow1.Size = new System.Drawing.Size(800, 37);
+            this.pnRow1.Padding = new System.Windows.Forms.Padding(40, 5, 40, 0);
+            this.pnRow1.Size = new System.Drawing.Size(800, 40);
             this.pnRow1.TabIndex = 0;
-            // 
-            // topShadow
-            // 
-            this.topShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(176)))));
-            this.topShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topShadow.Location = new System.Drawing.Point(20, 5);
-            this.topShadow.Name = "topShadow";
-            this.topShadow.Size = new System.Drawing.Size(655, 2);
-            this.topShadow.TabIndex = 1;
             // 
             // pnSearchBox
             // 
             this.pnSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.pnSearchBox.Controls.Add(this.rtbSearch);
             this.pnSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnSearchBox.Location = new System.Drawing.Point(20, 5);
+            this.pnSearchBox.Location = new System.Drawing.Point(40, 5);
             this.pnSearchBox.Name = "pnSearchBox";
-            this.pnSearchBox.Padding = new System.Windows.Forms.Padding(25, 5, 0, 5);
-            this.pnSearchBox.Size = new System.Drawing.Size(655, 32);
+            this.pnSearchBox.Padding = new System.Windows.Forms.Padding(25, 7, 0, 5);
+            this.pnSearchBox.Size = new System.Drawing.Size(615, 35);
             this.pnSearchBox.TabIndex = 3;
             // 
             // rtbSearch
@@ -111,10 +101,10 @@
             this.rtbSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbSearch.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.rtbSearch.Location = new System.Drawing.Point(25, 5);
+            this.rtbSearch.Location = new System.Drawing.Point(25, 7);
             this.rtbSearch.Multiline = false;
             this.rtbSearch.Name = "rtbSearch";
-            this.rtbSearch.Size = new System.Drawing.Size(630, 22);
+            this.rtbSearch.Size = new System.Drawing.Size(590, 23);
             this.rtbSearch.TabIndex = 0;
             this.rtbSearch.Text = "Type Here ...";
             this.rtbSearch.Enter += new System.EventHandler(this.rtbSearch_Enter);
@@ -123,29 +113,19 @@
             // pnSplitterSearchBar
             // 
             this.pnSplitterSearchBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSplitterSearchBar.Location = new System.Drawing.Point(675, 5);
+            this.pnSplitterSearchBar.Location = new System.Drawing.Point(655, 5);
             this.pnSplitterSearchBar.Name = "pnSplitterSearchBar";
-            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 32);
+            this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 35);
             this.pnSplitterSearchBar.TabIndex = 5;
             // 
             // pnBtnSearch
             // 
-            this.pnBtnSearch.Controls.Add(this.panel1);
             this.pnBtnSearch.Controls.Add(this.btnSearch);
             this.pnBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBtnSearch.Location = new System.Drawing.Point(680, 5);
+            this.pnBtnSearch.Location = new System.Drawing.Point(660, 5);
             this.pnBtnSearch.Name = "pnBtnSearch";
-            this.pnBtnSearch.Size = new System.Drawing.Size(100, 32);
+            this.pnBtnSearch.Size = new System.Drawing.Size(100, 35);
             this.pnBtnSearch.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(176)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 2);
-            this.panel1.TabIndex = 3;
             // 
             // btnSearch
             // 
@@ -157,30 +137,30 @@
             this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.Location = new System.Drawing.Point(0, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 32);
+            this.btnSearch.Size = new System.Drawing.Size(100, 35);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // bnRow2
+            // pnRow2
             // 
-            this.bnRow2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bnRow2.Controls.Add(this.btnCompleted);
-            this.bnRow2.Controls.Add(this.panel6);
-            this.bnRow2.Controls.Add(this.btnInterrupted);
-            this.bnRow2.Controls.Add(this.panel5);
-            this.bnRow2.Controls.Add(this.btnInProgress);
-            this.bnRow2.Controls.Add(this.panel4);
-            this.bnRow2.Controls.Add(this.btnStandBy);
-            this.bnRow2.Controls.Add(this.panel3);
-            this.bnRow2.Controls.Add(this.btnShowAll);
-            this.bnRow2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bnRow2.Location = new System.Drawing.Point(0, 37);
-            this.bnRow2.Margin = new System.Windows.Forms.Padding(0);
-            this.bnRow2.Name = "bnRow2";
-            this.bnRow2.Padding = new System.Windows.Forms.Padding(20, 15, 0, 15);
-            this.bnRow2.Size = new System.Drawing.Size(800, 60);
-            this.bnRow2.TabIndex = 1;
+            this.pnRow2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnRow2.Controls.Add(this.btnCompleted);
+            this.pnRow2.Controls.Add(this.panel6);
+            this.pnRow2.Controls.Add(this.btnInterrupted);
+            this.pnRow2.Controls.Add(this.panel5);
+            this.pnRow2.Controls.Add(this.btnInProgress);
+            this.pnRow2.Controls.Add(this.panel4);
+            this.pnRow2.Controls.Add(this.btnStandBy);
+            this.pnRow2.Controls.Add(this.panel3);
+            this.pnRow2.Controls.Add(this.btnShowAll);
+            this.pnRow2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnRow2.Location = new System.Drawing.Point(0, 40);
+            this.pnRow2.Margin = new System.Windows.Forms.Padding(0);
+            this.pnRow2.Name = "pnRow2";
+            this.pnRow2.Padding = new System.Windows.Forms.Padding(40, 15, 0, 15);
+            this.pnRow2.Size = new System.Drawing.Size(800, 60);
+            this.pnRow2.TabIndex = 1;
             // 
             // btnCompleted
             // 
@@ -190,7 +170,7 @@
             this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompleted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCompleted.Location = new System.Drawing.Point(440, 15);
+            this.btnCompleted.Location = new System.Drawing.Point(460, 15);
             this.btnCompleted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnCompleted.Name = "btnCompleted";
             this.btnCompleted.Size = new System.Drawing.Size(100, 30);
@@ -202,7 +182,7 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(435, 15);
+            this.panel6.Location = new System.Drawing.Point(455, 15);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 30);
             this.panel6.TabIndex = 12;
@@ -215,7 +195,7 @@
             this.btnInterrupted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterrupted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInterrupted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInterrupted.Location = new System.Drawing.Point(335, 15);
+            this.btnInterrupted.Location = new System.Drawing.Point(355, 15);
             this.btnInterrupted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInterrupted.Name = "btnInterrupted";
             this.btnInterrupted.Size = new System.Drawing.Size(100, 30);
@@ -227,7 +207,7 @@
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(330, 15);
+            this.panel5.Location = new System.Drawing.Point(350, 15);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 30);
             this.panel5.TabIndex = 10;
@@ -240,7 +220,7 @@
             this.btnInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInProgress.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInProgress.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInProgress.Location = new System.Drawing.Point(230, 15);
+            this.btnInProgress.Location = new System.Drawing.Point(250, 15);
             this.btnInProgress.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInProgress.Name = "btnInProgress";
             this.btnInProgress.Size = new System.Drawing.Size(100, 30);
@@ -252,7 +232,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(225, 15);
+            this.panel4.Location = new System.Drawing.Point(245, 15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 30);
             this.panel4.TabIndex = 8;
@@ -265,7 +245,7 @@
             this.btnStandBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStandBy.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStandBy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStandBy.Location = new System.Drawing.Point(125, 15);
+            this.btnStandBy.Location = new System.Drawing.Point(145, 15);
             this.btnStandBy.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnStandBy.Name = "btnStandBy";
             this.btnStandBy.Size = new System.Drawing.Size(100, 30);
@@ -277,7 +257,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(120, 15);
+            this.panel3.Location = new System.Drawing.Point(140, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 30);
             this.panel3.TabIndex = 6;
@@ -290,7 +270,7 @@
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnShowAll.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnShowAll.Location = new System.Drawing.Point(20, 15);
+            this.btnShowAll.Location = new System.Drawing.Point(40, 15);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(100, 30);
@@ -303,10 +283,10 @@
             // 
             this.pnRow3.Controls.Add(this.dgvFlow);
             this.pnRow3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnRow3.Location = new System.Drawing.Point(0, 97);
+            this.pnRow3.Location = new System.Drawing.Point(0, 100);
             this.pnRow3.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow3.Name = "pnRow3";
-            this.pnRow3.Size = new System.Drawing.Size(800, 353);
+            this.pnRow3.Size = new System.Drawing.Size(800, 350);
             this.pnRow3.TabIndex = 2;
             // 
             // dgvFlow
@@ -319,16 +299,17 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFlow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.dgvFlow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFlow.ColumnHeadersHeight = 50;
@@ -340,55 +321,57 @@
             this.Preset,
             this.AssignTo,
             this.Pin,
-            this.Loaded});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Loaded,
+            this.status});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFlow.EnableHeadersVisualStyles = false;
-            this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.dgvFlow.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvFlow.Margin = new System.Windows.Forms.Padding(0);
             this.dgvFlow.MultiSelect = false;
             this.dgvFlow.Name = "dgvFlow";
             this.dgvFlow.ReadOnly = true;
             this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvFlow.RowHeadersVisible = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvFlow.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFlow.RowTemplate.Height = 40;
             this.dgvFlow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFlow.Size = new System.Drawing.Size(800, 353);
+            this.dgvFlow.Size = new System.Drawing.Size(800, 350);
             this.dgvFlow.TabIndex = 0;
             this.dgvFlow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlow_CellClick);
             // 
             // Order
             // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Order.DefaultCellStyle = dataGridViewCellStyle3;
             this.Order.FillWeight = 200F;
             this.Order.HeaderText = "Order";
             this.Order.Name = "Order";
             this.Order.ReadOnly = true;
             this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Order.Width = 200;
             // 
             // Truck
             // 
@@ -397,7 +380,6 @@
             this.Truck.Name = "Truck";
             this.Truck.ReadOnly = true;
             this.Truck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Truck.Width = 150;
             // 
             // Product
             // 
@@ -406,7 +388,6 @@
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
             this.Product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Product.Width = 150;
             // 
             // Preset
             // 
@@ -415,7 +396,6 @@
             this.Preset.Name = "Preset";
             this.Preset.ReadOnly = true;
             this.Preset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Preset.Width = 150;
             // 
             // AssignTo
             // 
@@ -424,7 +404,6 @@
             this.AssignTo.Name = "AssignTo";
             this.AssignTo.ReadOnly = true;
             this.AssignTo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AssignTo.Width = 150;
             // 
             // Pin
             // 
@@ -432,7 +411,6 @@
             this.Pin.Name = "Pin";
             this.Pin.ReadOnly = true;
             this.Pin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Pin.Width = 150;
             // 
             // Loaded
             // 
@@ -440,7 +418,12 @@
             this.Loaded.Name = "Loaded";
             this.Loaded.ReadOnly = true;
             this.Loaded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Loaded.Width = 150;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // UIWorkFlowForm
             // 
@@ -449,7 +432,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnRow3);
-            this.Controls.Add(this.bnRow2);
+            this.Controls.Add(this.pnRow2);
             this.Controls.Add(this.pnRow1);
             this.Name = "UIWorkFlowForm";
             this.Text = "WorkFlow";
@@ -457,7 +440,7 @@
             this.pnRow1.ResumeLayout(false);
             this.pnSearchBox.ResumeLayout(false);
             this.pnBtnSearch.ResumeLayout(false);
-            this.bnRow2.ResumeLayout(false);
+            this.pnRow2.ResumeLayout(false);
             this.pnRow3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
             this.ResumeLayout(false);
@@ -467,7 +450,7 @@
         #endregion
 
         private Panel pnRow1;
-        private Panel bnRow2;
+        private Panel pnRow2;
         private Panel pnRow3;
         private Button btnSearch;
         private DataGridView dgvFlow;
@@ -491,7 +474,6 @@
         private DataGridViewTextBoxColumn AssignTo;
         private DataGridViewTextBoxColumn Pin;
         private DataGridViewTextBoxColumn Loaded;
-        private Panel topShadow;
-        private Panel panel1;
+        private DataGridViewTextBoxColumn status;
     }
 }
