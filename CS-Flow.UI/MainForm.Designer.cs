@@ -69,6 +69,7 @@
             // 
             // btnSettings
             // 
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -89,6 +90,7 @@
             // 
             // btnGraphical
             // 
+            this.btnGraphical.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGraphical.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGraphical.FlatAppearance.BorderSize = 0;
             this.btnGraphical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,6 +111,7 @@
             // 
             // btnEventLog
             // 
+            this.btnEventLog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEventLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEventLog.FlatAppearance.BorderSize = 0;
             this.btnEventLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,6 +132,7 @@
             // 
             // btnMeterReading
             // 
+            this.btnMeterReading.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeterReading.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMeterReading.FlatAppearance.BorderSize = 0;
             this.btnMeterReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -149,6 +153,7 @@
             // 
             // btnFillingPoint
             // 
+            this.btnFillingPoint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFillingPoint.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFillingPoint.FlatAppearance.BorderSize = 0;
             this.btnFillingPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -169,6 +174,7 @@
             // 
             // btnTransaction
             // 
+            this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTransaction.FlatAppearance.BorderSize = 0;
             this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,6 +195,7 @@
             // 
             // btnWorkFlow
             // 
+            this.btnWorkFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWorkFlow.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWorkFlow.FlatAppearance.BorderSize = 0;
             this.btnWorkFlow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -118,74 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icClose_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icClose_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icEventLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icEventLog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icEventLog_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icEventLog_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icFillingPoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icFillingPoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icFillingPoint_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icFillingPoint_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icGraphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icGraphics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icGraphics_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icGraphics_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMaximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMaximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMaximize_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMaximize_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMeterReading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMeterReading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMeterReading_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMeterReading_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMinimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMinimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icMinimize_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icMinimize_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icRestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icRestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icSettings_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icSettings_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icRestoreDown_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icRestoreDown_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icSettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icRestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icRestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icSettings_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icSettings_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icSidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icSidebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icSidebar_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icSidebar_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icTransaction_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icTransaction_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icWorkFlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icWorkFlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icMaximize_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMaximize_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icWorkFlow_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icWorkFlow_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,7 +136,67 @@
   <data name="splitter line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\splitter line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icMinimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMinimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icEventLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icEventLog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icMeterReading_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMeterReading_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="splitter_line_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\splitter line_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icMinimize_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMinimize_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icGraphics_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icGraphics_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icClose_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icClose_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icFillingPoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icFillingPoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icEventLog_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icEventLog_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icSidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icSidebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icMeterReading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMeterReading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icSidebar_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icSidebar_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icSettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icMaximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icMaximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icFillingPoint_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icFillingPoint_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icGraphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icGraphics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icWorkFlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icWorkFlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icTransaction_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icTransaction_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="citia logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\citia logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

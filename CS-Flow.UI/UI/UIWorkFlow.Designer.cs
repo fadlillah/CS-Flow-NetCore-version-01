@@ -165,15 +165,16 @@
             // btnCompleted
             // 
             this.btnCompleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.btnCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompleted.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCompleted.FlatAppearance.BorderSize = 0;
             this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompleted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCompleted.Location = new System.Drawing.Point(450, 15);
+            this.btnCompleted.Location = new System.Drawing.Point(510, 15);
             this.btnCompleted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnCompleted.Name = "btnCompleted";
-            this.btnCompleted.Size = new System.Drawing.Size(100, 30);
+            this.btnCompleted.Size = new System.Drawing.Size(110, 30);
             this.btnCompleted.TabIndex = 13;
             this.btnCompleted.Text = "Completed";
             this.btnCompleted.UseVisualStyleBackColor = false;
@@ -182,23 +183,24 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(445, 15);
+            this.panel6.Location = new System.Drawing.Point(500, 15);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 30);
+            this.panel6.Size = new System.Drawing.Size(10, 30);
             this.panel6.TabIndex = 12;
             // 
             // btnInterrupted
             // 
             this.btnInterrupted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.btnInterrupted.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInterrupted.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInterrupted.FlatAppearance.BorderSize = 0;
             this.btnInterrupted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterrupted.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInterrupted.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInterrupted.Location = new System.Drawing.Point(345, 15);
+            this.btnInterrupted.Location = new System.Drawing.Point(390, 15);
             this.btnInterrupted.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInterrupted.Name = "btnInterrupted";
-            this.btnInterrupted.Size = new System.Drawing.Size(100, 30);
+            this.btnInterrupted.Size = new System.Drawing.Size(110, 30);
             this.btnInterrupted.TabIndex = 11;
             this.btnInterrupted.Text = "Interrupted";
             this.btnInterrupted.UseVisualStyleBackColor = false;
@@ -207,23 +209,24 @@
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(340, 15);
+            this.panel5.Location = new System.Drawing.Point(380, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 30);
+            this.panel5.Size = new System.Drawing.Size(10, 30);
             this.panel5.TabIndex = 10;
             // 
             // btnInProgress
             // 
             this.btnInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.btnInProgress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInProgress.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInProgress.FlatAppearance.BorderSize = 0;
             this.btnInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInProgress.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInProgress.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInProgress.Location = new System.Drawing.Point(240, 15);
+            this.btnInProgress.Location = new System.Drawing.Point(270, 15);
             this.btnInProgress.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnInProgress.Name = "btnInProgress";
-            this.btnInProgress.Size = new System.Drawing.Size(100, 30);
+            this.btnInProgress.Size = new System.Drawing.Size(110, 30);
             this.btnInProgress.TabIndex = 9;
             this.btnInProgress.Text = "In Progress";
             this.btnInProgress.UseVisualStyleBackColor = false;
@@ -232,23 +235,24 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(235, 15);
+            this.panel4.Location = new System.Drawing.Point(260, 15);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 30);
+            this.panel4.Size = new System.Drawing.Size(10, 30);
             this.panel4.TabIndex = 8;
             // 
             // btnStandBy
             // 
             this.btnStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.btnStandBy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStandBy.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnStandBy.FlatAppearance.BorderSize = 0;
             this.btnStandBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStandBy.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStandBy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStandBy.Location = new System.Drawing.Point(135, 15);
+            this.btnStandBy.Location = new System.Drawing.Point(150, 15);
             this.btnStandBy.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnStandBy.Name = "btnStandBy";
-            this.btnStandBy.Size = new System.Drawing.Size(100, 30);
+            this.btnStandBy.Size = new System.Drawing.Size(110, 30);
             this.btnStandBy.TabIndex = 7;
             this.btnStandBy.Text = "Stand By";
             this.btnStandBy.UseVisualStyleBackColor = false;
@@ -257,14 +261,15 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(130, 15);
+            this.panel3.Location = new System.Drawing.Point(140, 15);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 30);
+            this.panel3.Size = new System.Drawing.Size(10, 30);
             this.panel3.TabIndex = 6;
             // 
             // btnShowAll
             // 
             this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnShowAll.FlatAppearance.BorderSize = 0;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -273,7 +278,7 @@
             this.btnShowAll.Location = new System.Drawing.Point(30, 15);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(100, 30);
+            this.btnShowAll.Size = new System.Drawing.Size(110, 30);
             this.btnShowAll.TabIndex = 5;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = false;
