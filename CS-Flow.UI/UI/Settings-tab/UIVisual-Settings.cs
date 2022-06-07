@@ -16,5 +16,13 @@ namespace CS_Flow.UI.Settings_tab
         {
             InitializeComponent();
         }
+
+        private void UIVisual_Settings_Load(object sender, EventArgs e)
+        {
+            btnMoveUp.Width = pnBtnControl.Width / 3;
+            btnMoveDown.Width = pnBtnControl.Width / 3;
+            btnRename.Width = pnBtnControl.Width / 3;
+            pnListBox.Width = pnBackground.Width / 3;
+        }
     }
 }
