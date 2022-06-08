@@ -66,65 +66,74 @@ namespace CS_Flow.UI
        
         public void loadDataWorkFlow(List<FillingBatch> fillingBatches)
         {
+            int cnt = 0;
             dataWorkflow.Rows.Clear();
+            Color rowColor = new Color();
             foreach (FillingBatch fillingBatch in fillingBatches)
             {
                 string status = "";
                 if (fillingBatch.status == 0)
                 {
                     status = "Standby";
+                    rowColor = Color.White;
                 }
                 else if(fillingBatch.status == 1)
                 {
                     status = "Authorized";
+                    rowColor = Color.LightGoldenrodYellow;
                 }
                 else if(fillingBatch.status == 2)
                 {
                     status = "In Progress";
+                    rowColor = Color.LightGreen;
                 }
                 if (fillingBatch.status == 3)
                 {
                     status = "Interrupted";
+                    rowColor = Color.IndianRed;
                 }
                 if (fillingBatch.status == 4)
                 {
                     status = "Completed";
+                    rowColor = Color.DeepSkyBlue;
                 }
                 if (fillingBatch.status == 5)
                 {
                     status = "Gate Out";
-                }
-
+                    rowColor = Color.MediumPurple;
+                }                
                 dataWorkflow.Rows.Add(status, fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
+                dataWorkflow.Rows[cnt].Cells[0].Style.BackColor = rowColor;
+                cnt++;
             }
 
-            for (int i = 0; i < dataWorkflow.Rows.Count; i++)
-            {
-                if (dataWorkflow.Rows[i].Cells[0].Value == "Standby")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.White;
-                }
-                else if (dataWorkflow.Rows[i].Cells[0].Value == "Authorized")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGoldenrodYellow;
-                }
-                else if (dataWorkflow.Rows[i].Cells[0].Value == "In Progress")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGreen;
-                }
-                else if (dataWorkflow.Rows[i].Cells[0].Value == "Interrupted")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.IndianRed;
-                }
-                else if (dataWorkflow.Rows[i].Cells[0].Value == "Completed")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.DeepSkyBlue;
-                }
-                else if (dataWorkflow.Rows[i].Cells[0].Value == "Gate Out")
-                {
-                    dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.MediumPurple;
-                }
-            }
+            //for (int i = 0; i < dataWorkflow.Rows.Count; i++)
+            //{
+            //    if (dataWorkflow.Rows[i].Cells[0].Value == "Standby")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.White;
+            //    }
+            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Authorized")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGoldenrodYellow;
+            //    }
+            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "In Progress")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGreen;
+            //    }
+            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Interrupted")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.IndianRed;
+            //    }
+            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Completed")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.DeepSkyBlue;
+            //    }
+            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Gate Out")
+            //    {
+            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.MediumPurple;
+            //    }
+            //}
         }
 
         private void dgvFlow_CellClick(object sender, DataGridViewCellEventArgs e)
