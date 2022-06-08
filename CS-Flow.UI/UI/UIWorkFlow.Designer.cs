@@ -309,7 +309,7 @@
             this.dgvFlow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -342,7 +342,7 @@
             this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFlow.EnableHeadersVisualStyles = false;
-            this.dgvFlow.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvFlow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvFlow.Margin = new System.Windows.Forms.Padding(0);
             this.dgvFlow.MultiSelect = false;

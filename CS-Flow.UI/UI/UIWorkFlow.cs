@@ -87,21 +87,22 @@ namespace CS_Flow.UI
                     status = "In Progress";
                     rowColor = Color.LightGreen;
                 }
-                if (fillingBatch.status == 3)
+                else if (fillingBatch.status == 3)
                 {
                     status = "Interrupted";
                     rowColor = Color.IndianRed;
                 }
-                if (fillingBatch.status == 4)
+                else if (fillingBatch.status == 4)
                 {
                     status = "Completed";
                     rowColor = Color.DeepSkyBlue;
                 }
-                if (fillingBatch.status == 5)
+                else if (fillingBatch.status == 5)
                 {
                     status = "Gate Out";
                     rowColor = Color.MediumPurple;
-                }                
+                }
+                
                 dataWorkflow.Rows.Add(status, fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
                 dataWorkflow.Rows[cnt].Cells[0].Style.BackColor = rowColor;
                 cnt++;
