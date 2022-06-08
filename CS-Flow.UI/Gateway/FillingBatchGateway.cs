@@ -45,7 +45,7 @@ namespace CS_Flow.Gateway
         }
         public bool Add(FillingBatch fillingBatch)
         {
-            var data = _dataContext.tblFillingBatch.FirstOrDefault(x => x.truck == fillingBatch.truck && x.status==0);
+            var data = _dataContext.tblFillingBatch.FirstOrDefault(x => x.truck == fillingBatch.truck && x.status==0 & fillingBatch.order_id == x.order_id);
             if (data != null)
             {
                 return false;

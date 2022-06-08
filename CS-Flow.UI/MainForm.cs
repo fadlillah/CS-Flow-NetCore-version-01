@@ -23,6 +23,11 @@ namespace CS_Flow.UI
         //thread
         private Thread _ThreadBC;
         private Thread _ThreadLoading;
+        private Thread _TheadGateIn;
+
+        //rest server
+        private RestServerManager restServer;
+        private string gateInURL = @"http://127.0.0.1:8088/newtransaction/";
 
         public MainForm()
         {
@@ -63,12 +68,21 @@ namespace CS_Flow.UI
             btnGraphical.Enabled = false;
             btnGraphical.Visible = false;
             loadFillingPoint();
-            tm_ack.Enabled = true;
-            _ThreadBC = new Thread(t=>fillingPointDetailManager.updateConnection());
+            tm_ack.Enabled = true;            
+            //
+            Sliding();
+
+            //rest Server
+            restServer = new RestServerManager(gateInURL);
+            restServer.startConnection();
+            //start thread
+            _ThreadBC = new Thread(t => fillingPointDetailManager.updateConnection());
             _ThreadLoading = new Thread(t => fillingPointDetailManager.updateDataBC());
+            _TheadGateIn = new Thread(t => restServer.realtimeListening());
             _ThreadBC.Start();
             _ThreadLoading.Start();
-            Sliding();
+            _TheadGateIn.Start();
+
 
         }
 
