@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,12 +61,21 @@
             this.AssignTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loaded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsFlow = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsTruck = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.tsTerminate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMoveTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFS1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFS2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFS3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnRow1.SuspendLayout();
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
             this.pnRow2.SuspendLayout();
             this.pnRow3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
+            this.cmsFlow.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnRow1
@@ -331,6 +341,7 @@
             this.AssignTo,
             this.Pin,
             this.Loaded});
+            this.dgvFlow.ContextMenuStrip = this.cmsFlow;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -371,6 +382,7 @@
             this.dgvFlow.Size = new System.Drawing.Size(800, 350);
             this.dgvFlow.TabIndex = 0;
             this.dgvFlow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlow_CellClick);
+            this.dgvFlow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlow_CellContentClick);
             this.dgvFlow.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvFlow_CellFormatting);
             // 
             // status
@@ -435,6 +447,67 @@
             this.Loaded.ReadOnly = true;
             this.Loaded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // cmsFlow
+            // 
+            this.cmsFlow.BackColor = System.Drawing.SystemColors.Control;
+            this.cmsFlow.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTruck,
+            this.tsSeparator,
+            this.tsTerminate,
+            this.tsMoveTo});
+            this.cmsFlow.Name = "contextMenuStrip1";
+            this.cmsFlow.Size = new System.Drawing.Size(190, 98);
+            this.cmsFlow.Opening += new System.ComponentModel.CancelEventHandler(this.cmsFlow_Opening);
+            // 
+            // tsTruck
+            // 
+            this.tsTruck.Enabled = false;
+            this.tsTruck.Name = "tsTruck";
+            this.tsTruck.Size = new System.Drawing.Size(189, 22);
+            this.tsTruck.Text = "BE2893AX";
+            // 
+            // tsSeparator
+            // 
+            this.tsSeparator.Name = "tsSeparator";
+            this.tsSeparator.Size = new System.Drawing.Size(186, 6);
+            // 
+            // tsTerminate
+            // 
+            this.tsTerminate.Name = "tsTerminate";
+            this.tsTerminate.Size = new System.Drawing.Size(189, 22);
+            this.tsTerminate.Text = "Terminate Transaction";
+            // 
+            // tsMoveTo
+            // 
+            this.tsMoveTo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsFS1,
+            this.tsFS2,
+            this.tsFS3});
+            this.tsMoveTo.Name = "tsMoveTo";
+            this.tsMoveTo.Size = new System.Drawing.Size(189, 22);
+            this.tsMoveTo.Text = "Move To";
+            // 
+            // tsFS1
+            // 
+            this.tsFS1.Name = "tsFS1";
+            this.tsFS1.Size = new System.Drawing.Size(180, 22);
+            this.tsFS1.Text = "FS-1";
+            this.tsFS1.Click += new System.EventHandler(this.tsFS1_Click);
+            // 
+            // tsFS2
+            // 
+            this.tsFS2.Name = "tsFS2";
+            this.tsFS2.Size = new System.Drawing.Size(180, 22);
+            this.tsFS2.Text = "FS-2";
+            this.tsFS2.Click += new System.EventHandler(this.tsFS2_Click);
+            // 
+            // tsFS3
+            // 
+            this.tsFS3.Name = "tsFS3";
+            this.tsFS3.Size = new System.Drawing.Size(180, 22);
+            this.tsFS3.Text = "FS-3";
+            this.tsFS3.Click += new System.EventHandler(this.tsFS3_Click);
+            // 
             // UIWorkFlowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -453,6 +526,7 @@
             this.pnRow2.ResumeLayout(false);
             this.pnRow3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
+            this.cmsFlow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -485,5 +559,13 @@
         private DataGridViewTextBoxColumn AssignTo;
         private DataGridViewTextBoxColumn Pin;
         private DataGridViewTextBoxColumn Loaded;
+        private ContextMenuStrip cmsFlow;
+        private ToolStripSeparator tsSeparator;
+        private ToolStripMenuItem tsTerminate;
+        private ToolStripMenuItem tsMoveTo;
+        private ToolStripMenuItem tsFS1;
+        private ToolStripMenuItem tsFS2;
+        private ToolStripMenuItem tsFS3;
+        private ToolStripMenuItem tsTruck;
     }
 }

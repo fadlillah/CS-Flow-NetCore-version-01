@@ -256,5 +256,62 @@ namespace CS_Flow.UI
         {
             
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void dgvFlow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmsFlow_Opening(object sender, CancelEventArgs e)
+        {
+            int selectedRow = dgvFlow.SelectedRows[0].Index;
+            
+            string truckName = dgvFlow.Rows[selectedRow].Cells["Truck"].Value.ToString();
+            string assignTo = dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value.ToString();
+
+            tsTruck.Text = truckName;
+
+            if (assignTo == "FS-1")
+            {
+                tsFS1.Visible = false;
+                tsFS2.Visible = true;
+                tsFS3.Visible = true;
+            }
+            else if (assignTo == "FS-2")
+            {
+                tsFS1.Visible = true;
+                tsFS2.Visible = false;
+                tsFS3.Visible = true;
+            }
+            else if (assignTo == "FS-3")
+            {
+                tsFS1.Visible = true;
+                tsFS2.Visible = true;
+                tsFS3.Visible = false;
+            }
+        }
+
+        private void tsFS1_Click(object sender, EventArgs e)
+        {
+            int selectedRow = dgvFlow.SelectedRows[0].Index;
+            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS1.Text;
+        }
+
+        private void tsFS2_Click(object sender, EventArgs e)
+        {
+            int selectedRow = dgvFlow.SelectedRows[0].Index;
+            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS2.Text;
+        }
+
+        private void tsFS3_Click(object sender, EventArgs e)
+        {
+            int selectedRow = dgvFlow.SelectedRows[0].Index;
+            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS3.Text;
+        }
     }
 }
