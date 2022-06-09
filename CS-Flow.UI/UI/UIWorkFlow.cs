@@ -104,7 +104,9 @@ namespace CS_Flow.UI
                 }
                 
                 dataWorkflow.Rows.Add(status, fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);
-                dataWorkflow.Rows[cnt].Cells[0].Style.BackColor = rowColor;
+                ///dataWorkflow.Rows[cnt].Cells[0].Style.BackColor = rowColor;
+                
+                //dataWorkflow.Rows[cnt].ba
                 cnt++;
             }
 
