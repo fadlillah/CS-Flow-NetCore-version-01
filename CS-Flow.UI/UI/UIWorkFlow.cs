@@ -110,33 +110,6 @@ namespace CS_Flow.UI
                 cnt++;
             }
 
-            //for (int i = 0; i < dataWorkflow.Rows.Count; i++)
-            //{
-            //    if (dataWorkflow.Rows[i].Cells[0].Value == "Standby")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.White;
-            //    }
-            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Authorized")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGoldenrodYellow;
-            //    }
-            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "In Progress")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.LightGreen;
-            //    }
-            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Interrupted")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.IndianRed;
-            //    }
-            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Completed")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.DeepSkyBlue;
-            //    }
-            //    else if (dataWorkflow.Rows[i].Cells[0].Value == "Gate Out")
-            //    {
-            //        dataWorkflow.Rows[i].Cells[0].Style.BackColor = Color.MediumPurple;
-            //    }
-            //}
         }
 
         private void dgvFlow_CellClick(object sender, DataGridViewCellEventArgs e)

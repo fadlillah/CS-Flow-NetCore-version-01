@@ -15,9 +15,17 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblFillingSession.ToList();
         }
+        public FillingSession getByBatchId(int fbId)
+        {
+            return _dataContext.tblFillingSession.FirstOrDefault(u => u.batch_id == fbId);
+        }
         public FillingSession getByLoaded(int fpId, int fbId)
         {
             return _dataContext.tblFillingSession.FirstOrDefault(u => u.filling_point_id == fpId && u.batch_id == fbId);
+        }
+        public FillingSession getByLoaded(int fbId)
+        {
+            return _dataContext.tblFillingSession.FirstOrDefault(u=> u.batch_id == fbId);
         }
         public bool Insert(FillingSession fillingSession)
         {
@@ -32,7 +40,7 @@ namespace CS_Flow.Gateway
         public bool Update(FillingSession fillingSession)
         {
             var data = _dataContext.tblFillingSession.FirstOrDefault(u => u.id == fillingSession.id);
-            if (data == null)
+            if (data == null) 
             {
                 return false;
             }

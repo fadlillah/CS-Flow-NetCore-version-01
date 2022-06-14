@@ -41,7 +41,7 @@
             this.pnBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnRow2 = new System.Windows.Forms.Panel();
-            this.dgvFlow = new System.Windows.Forms.DataGridView();
+            this.dgvTransaction = new System.Windows.Forms.DataGridView();
             this.batch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.pnSearchBox.SuspendLayout();
             this.pnBtnSearch.SuspendLayout();
             this.pnRow2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
             this.SuspendLayout();
             // 
             // pnRow1
@@ -70,7 +70,7 @@
             this.pnRow1.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow1.Name = "pnRow1";
             this.pnRow1.Padding = new System.Windows.Forms.Padding(30, 10, 30, 0);
-            this.pnRow1.Size = new System.Drawing.Size(800, 40);
+            this.pnRow1.Size = new System.Drawing.Size(1004, 40);
             this.pnRow1.TabIndex = 1;
             // 
             // pnSearchBox
@@ -81,7 +81,7 @@
             this.pnSearchBox.Location = new System.Drawing.Point(30, 10);
             this.pnSearchBox.Name = "pnSearchBox";
             this.pnSearchBox.Padding = new System.Windows.Forms.Padding(25, 7, 0, 5);
-            this.pnSearchBox.Size = new System.Drawing.Size(635, 30);
+            this.pnSearchBox.Size = new System.Drawing.Size(839, 30);
             this.pnSearchBox.TabIndex = 3;
             // 
             // rtbSearch
@@ -94,14 +94,14 @@
             this.rtbSearch.Location = new System.Drawing.Point(25, 7);
             this.rtbSearch.Multiline = false;
             this.rtbSearch.Name = "rtbSearch";
-            this.rtbSearch.Size = new System.Drawing.Size(610, 18);
+            this.rtbSearch.Size = new System.Drawing.Size(814, 18);
             this.rtbSearch.TabIndex = 0;
             this.rtbSearch.Text = "Type Here ...";
             // 
             // pnSplitterSearchBar
             // 
             this.pnSplitterSearchBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSplitterSearchBar.Location = new System.Drawing.Point(665, 10);
+            this.pnSplitterSearchBar.Location = new System.Drawing.Point(869, 10);
             this.pnSplitterSearchBar.Name = "pnSplitterSearchBar";
             this.pnSplitterSearchBar.Size = new System.Drawing.Size(5, 30);
             this.pnSplitterSearchBar.TabIndex = 5;
@@ -110,7 +110,7 @@
             // 
             this.pnBtnSearch.Controls.Add(this.btnSearch);
             this.pnBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBtnSearch.Location = new System.Drawing.Point(670, 10);
+            this.pnBtnSearch.Location = new System.Drawing.Point(874, 10);
             this.pnBtnSearch.Name = "pnBtnSearch";
             this.pnBtnSearch.Size = new System.Drawing.Size(100, 30);
             this.pnBtnSearch.TabIndex = 4;
@@ -133,32 +133,32 @@
             // pnRow2
             // 
             this.pnRow2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnRow2.Controls.Add(this.dgvFlow);
+            this.pnRow2.Controls.Add(this.dgvTransaction);
             this.pnRow2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnRow2.Location = new System.Drawing.Point(0, 40);
             this.pnRow2.Margin = new System.Windows.Forms.Padding(0);
             this.pnRow2.Name = "pnRow2";
             this.pnRow2.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.pnRow2.Size = new System.Drawing.Size(800, 410);
+            this.pnRow2.Size = new System.Drawing.Size(1004, 410);
             this.pnRow2.TabIndex = 3;
             // 
-            // dgvFlow
+            // dgvTransaction
             // 
-            this.dgvFlow.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvFlow.AllowUserToAddRows = false;
-            this.dgvFlow.AllowUserToDeleteRows = false;
-            this.dgvFlow.AllowUserToResizeColumns = false;
-            this.dgvFlow.AllowUserToResizeRows = false;
+            this.dgvTransaction.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvTransaction.AllowUserToAddRows = false;
+            this.dgvTransaction.AllowUserToDeleteRows = false;
+            this.dgvTransaction.AllowUserToResizeColumns = false;
+            this.dgvTransaction.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            this.dgvFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFlow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFlow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvFlow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvTransaction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvTransaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -167,10 +167,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(156)))), ((int)(((byte)(175)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFlow.ColumnHeadersHeight = 50;
-            this.dgvFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTransaction.ColumnHeadersHeight = 50;
+            this.dgvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.batch,
             this.status,
             this.Product,
@@ -188,16 +188,16 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFlow.EnableHeadersVisualStyles = false;
-            this.dgvFlow.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvFlow.Location = new System.Drawing.Point(0, 20);
-            this.dgvFlow.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvFlow.MultiSelect = false;
-            this.dgvFlow.Name = "dgvFlow";
-            this.dgvFlow.ReadOnly = true;
-            this.dgvFlow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTransaction.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTransaction.EnableHeadersVisualStyles = false;
+            this.dgvTransaction.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvTransaction.Location = new System.Drawing.Point(0, 20);
+            this.dgvTransaction.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvTransaction.MultiSelect = false;
+            this.dgvTransaction.Name = "dgvTransaction";
+            this.dgvTransaction.ReadOnly = true;
+            this.dgvTransaction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -205,8 +205,8 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvFlow.RowHeadersVisible = false;
+            this.dgvTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTransaction.RowHeadersVisible = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -214,11 +214,11 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlow.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvFlow.RowTemplate.Height = 40;
-            this.dgvFlow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFlow.Size = new System.Drawing.Size(800, 390);
-            this.dgvFlow.TabIndex = 0;
+            this.dgvTransaction.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTransaction.RowTemplate.Height = 40;
+            this.dgvTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTransaction.Size = new System.Drawing.Size(1004, 390);
+            this.dgvTransaction.TabIndex = 0;
             // 
             // batch
             // 
@@ -292,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1004, 450);
             this.Controls.Add(this.pnRow2);
             this.Controls.Add(this.pnRow1);
             this.Name = "UITransactionForm";
@@ -302,7 +302,7 @@
             this.pnSearchBox.ResumeLayout(false);
             this.pnBtnSearch.ResumeLayout(false);
             this.pnRow2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFlow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +326,6 @@
         private DataGridViewTextBoxColumn gateIn;
         private DataGridViewTextBoxColumn gateOut;
         private DataGridViewTextBoxColumn loadedCoriolis;
+        private DataGridView dgvTransaction;
     }
 }

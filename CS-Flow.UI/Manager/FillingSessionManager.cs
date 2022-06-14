@@ -19,6 +19,10 @@ namespace CS_Flow.Manager
         {
             return _fillingSessionGateway.getByLoaded(FpId, fbId);
         }
+        public FillingSession getLoaded(int fbId)
+        {
+            return _fillingSessionGateway.getByLoaded(fbId);
+        }
         public bool StartLoaded(int StartTot, FillingPointDetail fpd, ChildDevice cd, FillingBatch Fb)
         {
             FillingSession fillingSession = new FillingSession();

@@ -10,6 +10,7 @@ namespace CS_Flow.UI
         private List<FillingBatch> _fillingBatches;
         private List<FillingPointDetail> _fillingPointDetails;
         private FillingPointDetailManager fillingPointDetailManager;
+        private TransactionManager _transactionManager;
 
         //Field Object Toolbox blue print
         private Button currentButton;
@@ -27,7 +28,7 @@ namespace CS_Flow.UI
 
         //rest server
         private RestServerManager restServer;
-        private string gateInURL = @"http://127.0.0.1:8088/newtransaction/";
+        private string gateInURL = @"http://127.0.0.1:8088/";
 
         public MainForm()
         {
@@ -39,6 +40,7 @@ namespace CS_Flow.UI
             _fillingBatchManager = new FillingBatchManager();
             _fillingBatches = new List<FillingBatch>();
             _fillingPointDetails = new List<FillingPointDetail>();
+            _transactionManager = new TransactionManager();
 
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
@@ -82,7 +84,6 @@ namespace CS_Flow.UI
             _ThreadBC.Start();
             _ThreadLoading.Start();
             _TheadGateIn.Start();
-
 
         }
 
@@ -171,6 +172,10 @@ namespace CS_Flow.UI
             if (currentButton.Name == "btnFillingPoint")
             {
                 realTimeFillingPoint();
+            }
+            else if (currentButton.Name == "btnTransaction")
+            {
+                loadTransaction();
             }
 
 
@@ -297,6 +302,14 @@ namespace CS_Flow.UI
                     UIFillingPointForm.updateFillingPoint(inc, _fillingPointDetails[inc].Status, (int)_fillingPointDetails[inc].tank_temperature);
                 }
             }
+        }
+        #endregion
+
+        #region Transaction
+        private void loadTransaction()
+        {
+            List<Transaction> tss = _transactionManager.getOnLoaded();
+            UITransactionForm.loadDataTransaction(tss);
         }
         #endregion
         private void Sliding()

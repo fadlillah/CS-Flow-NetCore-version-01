@@ -19,6 +19,14 @@ namespace CS_Flow.Gateway
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 0).ToList();
         }
+        public FillingBatch getByTransporterId(string transporterId)
+        {
+            return _dataContext.tblFillingBatch.FirstOrDefault(x => x.truck == transporterId && x.status <5);
+        }
+        public FillingBatch getByOrderId(string orderId)
+        {
+            return _dataContext.tblFillingBatch.FirstOrDefault(x => x.order_id == orderId && x.status == 4);
+        }
         public List<FillingBatch> getStandbyByFpPin(string Fp, int Pin)
         {
             return _dataContext.tblFillingBatch.Where(x => x.status == 0 && x.filling_point == Fp && x.pin == Pin.ToString()).ToList();
@@ -81,7 +89,19 @@ namespace CS_Flow.Gateway
                 return false;
             }
             data.status = Status;
-
+            _dataContext.tblFillingBatch.Update(data);
+            return _dataContext.SaveChanges() > 0;
+        }
+        public bool UpdateGateOut(string orderId)
+        {
+            var data = _dataContext.tblFillingBatch.FirstOrDefault(u => u.order_id == orderId && u.status == 4);
+            if (data == null)
+            {
+                return false;
+            }
+            data.gateout_time =Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
+            data.status = 5;
+            _dataContext.tblFillingBatch.Update(data);
             return _dataContext.SaveChanges() > 0;
         }
 

@@ -19,6 +19,14 @@ namespace CS_Flow.Manager
         {
             return _fillingBatchGateway.getStanby();
         }
+        public FillingBatch getByTransporterId(string transporterId)
+        {
+            return _fillingBatchGateway.getByTransporterId(transporterId);
+        }
+        public FillingBatch getByOrderId(string orderId)
+        {
+            return _fillingBatchGateway.getByOrderId(orderId);
+        }
         public List<FillingBatch> getStandbyByFpPin(string Fp, int Pin )
         {
             return _fillingBatchGateway.getStandbyByFpPin(Fp, Pin);
@@ -46,6 +54,10 @@ namespace CS_Flow.Manager
         public bool UpdateStatus(string OrderId, int Status)
         {
             return _fillingBatchGateway.UpdateStatus(OrderId, Status);
+        }
+        public bool UpdateGateOut(string OrderId)
+        {
+            return _fillingBatchGateway.UpdateGateOut(OrderId);
         }
     }
 }
