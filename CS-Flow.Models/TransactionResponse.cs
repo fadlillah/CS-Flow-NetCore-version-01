@@ -31,9 +31,9 @@ namespace CS_Flow.Models
         public string pin { get; set; }
         public int preset { get; set; }
         public string product { get; set; }
-        public int starttime { get; set; }
+        public double starttime { get; set; }
         public int starttotal { get; set; }
-        public int stoptime { get; set; }
+        public long stoptime { get; set; }
         public string? tank { get; set; }
         public double temp { get; set; }
         public string? transporter { get; set; }
@@ -52,6 +52,6 @@ namespace CS_Flow.Models
         public int endtotal { get; set; }
         public int starttotal2 { get; set; }
         public int endtotal2 { get; set; }
-        public int interrupted { get; set; }
+        public bool interrupted { get; set; }
     }
 }

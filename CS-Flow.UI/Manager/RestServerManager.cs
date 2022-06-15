@@ -180,7 +180,7 @@ namespace CS_Flow.Manager
                                 tsResponse.measured_temp1 = flSession.measured_temperature_1;
                                 tsResponse.measured_temp2 = flSession.measured_temperature_2;
                                 tsResponse.actualloaded = flSession.loaded;
-                                if (flSession.interrupted != 0)
+                                if (flSession.interrupted != false)
                                 {
                                     tsResponse.multibatch = true;
                                 }
@@ -189,14 +189,14 @@ namespace CS_Flow.Manager
                                     tsResponse.multibatch = false;
                                 }
 
-                                tsResponse.starttime = flSession.start_time;
+                                tsResponse.starttime =convertToOA(flSession.start_time);
                                 tsResponse.starttotal = flSession.start_totalizer;
                                 tsResponse.stoptime = flSession.stop_time;
                                 tsResponse.temp = (double)flSession.temperature;
                                 TransactionResponseDetail tsResponseDetail = new TransactionResponseDetail();
                                 tsResponseDetail.fpname = fillingBatch.filling_point;
-                                tsResponseDetail.starttime = flSession.start_time;
-                                tsResponseDetail.stoptime = flSession.stop_time;
+                                tsResponseDetail.starttime = convertToOA(flSession.start_time);
+                                tsResponseDetail.stoptime = convertToOA(flSession.stop_time);
                                 tsResponseDetail.preset = fillingBatch.preset;
                                 tsResponseDetail.loaded = flSession.loaded;
                                 tsResponseDetail.starttotal = flSession.stop_totalizer;
@@ -245,6 +245,12 @@ namespace CS_Flow.Manager
                 #endregion
 
             }
+        }
+        public double convertToOA(int unixTimeStamp)
+        {
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime.ToOADate();
         }
     }
 }

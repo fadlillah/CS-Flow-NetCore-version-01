@@ -32,6 +32,10 @@ namespace CS_Flow.Manager
             fillingSession.start_totalizer = StartTot;
             fillingSession.preset = Fb.preset;
             fillingSession.tank_supply = "";
+            //fillingSession.temperature =(decimal) fpd.LiquidTemperature;
+            //fillingSession.density =(decimal) fpd.LiquidDensity;
+            //fillingSession.tank_supply = "";
+            //fillingSessio
             return _fillingSessionGateway.Insert(fillingSession);
         }
         public bool Complete(FillingSession fs)

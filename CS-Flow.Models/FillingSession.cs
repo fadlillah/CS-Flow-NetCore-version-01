@@ -16,7 +16,7 @@ namespace CS_Flow.Models
         public int start_totalizer { get; set; }
         public int stop_totalizer { get; set; }
         public int preset { get; set; }
-        public int interrupted { get; set; }
+        public bool interrupted { get; set; }
         public decimal temperature { get; set; }
         public decimal density { get; set; }
         public string tank_supply { get; set; }

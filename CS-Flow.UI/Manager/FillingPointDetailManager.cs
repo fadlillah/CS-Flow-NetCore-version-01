@@ -172,7 +172,9 @@ namespace CS_Flow.Manager
                                                 fs.stop_totalizer = _danloadLibs[inc].GrossTotal;
                                                 fs.loaded = fs.stop_totalizer - fs.start_totalizer;
                                                 fs.temperature = _danloadLibs[inc].temp10;
-                                                fs.density = _danloadLibs[inc].dens;                                                
+                                                fs.density = _danloadLibs[inc].dens;
+                                                fs.tank_supply = "";
+                                                fs.temperature = _danloadLibs[inc].temp10;                                                
                                                 _fillingSessionManager.Complete(fs);
 
                                             }
