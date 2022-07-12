@@ -148,6 +148,7 @@ namespace CS_Flow.Manager
                     FillingBatch fillingBatch = new FillingBatch();
                     FillingSession flSession = new FillingSession();
                     List<TransactionResponse> transactionResponses = new List<TransactionResponse>();
+                    _fillingBatchManager = new FillingBatchManager();
                     fillingBatch = _fillingBatchManager.getByTransporterId(TransPorterId);                    
                     if (fillingBatch != null)
                     {
@@ -199,9 +200,9 @@ namespace CS_Flow.Manager
                                 tsResponseDetail.stoptime = convertToOA(flSession.stop_time);
                                 tsResponseDetail.preset = fillingBatch.preset;
                                 tsResponseDetail.loaded = flSession.loaded;
-                                tsResponseDetail.starttotal = flSession.stop_totalizer;
+                                tsResponseDetail.starttotal = flSession.start_totalizer;
                                 tsResponseDetail.endtotal = flSession.stop_totalizer;
-                                tsResponseDetail.starttotal2 = flSession.stop_totalizer_2;
+                                tsResponseDetail.starttotal2 = flSession.start_totalizer_2;
                                 tsResponseDetail.endtotal2 = flSession.stop_totalizer_2;
                                 tsResponseDetail.interrupted = flSession.interrupted;
                                 tsResponse.transactionResponseDetails.Add(tsResponseDetail);

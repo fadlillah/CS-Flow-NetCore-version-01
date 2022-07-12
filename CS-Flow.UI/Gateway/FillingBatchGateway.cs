@@ -13,7 +13,7 @@ namespace CS_Flow.Gateway
         DataContext _dataContext = new DataContext();
         public List<FillingBatch> getAll()
         {
-            return _dataContext.tblFillingBatch.ToList();
+            return _dataContext.tblFillingBatch.Where(x=>x.status <5).ToList();
         }
         public List<FillingBatch> getStanby()
         {
@@ -81,6 +81,16 @@ namespace CS_Flow.Gateway
             data.gateout_time = fillingBatch.gateout_time;
             return _dataContext.SaveChanges() > 0;
         }
+        public bool UpdateByFillingPoint(string OrderId, string FpName)
+        {
+            var data = _dataContext.tblFillingBatch.FirstOrDefault(u => u.order_id == OrderId);
+            if (data == null)
+            {
+                return false;
+            }
+            data.filling_point = FpName;
+            return _dataContext.SaveChanges() > 0;
+        }
         public bool UpdateStatus(string orderId, int Status)
         {
             var data = _dataContext.tblFillingBatch.FirstOrDefault(u => u.order_id == orderId);
@@ -89,7 +99,7 @@ namespace CS_Flow.Gateway
                 return false;
             }
             data.status = Status;
-            _dataContext.tblFillingBatch.Update(data);
+            //_dataContext.tblFillingBatch.Update(data);
             return _dataContext.SaveChanges() > 0;
         }
         public bool UpdateGateOut(string orderId)

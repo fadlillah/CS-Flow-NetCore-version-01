@@ -456,7 +456,7 @@
             this.tsTerminate,
             this.tsMoveTo});
             this.cmsFlow.Name = "contextMenuStrip1";
-            this.cmsFlow.Size = new System.Drawing.Size(190, 98);
+            this.cmsFlow.Size = new System.Drawing.Size(190, 76);
             this.cmsFlow.Opening += new System.ComponentModel.CancelEventHandler(this.cmsFlow_Opening);
             // 
             // tsTruck

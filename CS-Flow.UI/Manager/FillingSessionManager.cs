@@ -15,6 +15,10 @@ namespace CS_Flow.Manager
         {
             return _fillingSessionGateway.getAll();
         }
+        public FillingSession getByBatchId(int id)
+        {
+            return _fillingSessionGateway.getByBatchId(id);
+        }
         public FillingSession getLoaded(int FpId, int fbId)
         {
             return _fillingSessionGateway.getByLoaded(FpId, fbId);

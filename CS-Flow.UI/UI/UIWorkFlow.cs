@@ -111,7 +111,46 @@ namespace CS_Flow.UI
             }
 
         }
+        public static void realtimeWorkFlow(List<FillingPointDetail> fpds)
+        {
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            List<FillingBatch> fillingBatches = new List<FillingBatch>();
+            int cnt;
+            if (currentBtnWorkFlow.Name == "btnShowAll")
+            {
+                fillingBatches = fillingBatchManager.getAll();
+            }
+            else if (currentBtnWorkFlow.Name == "btnInProgress")
+            {
+                fillingBatches = fillingBatchManager.getInProgress();
+            }
+            if (fillingBatches.Count > 0)
+            {
+                cnt = 0;
+                foreach(FillingBatch fb in fillingBatches)
+                {
+                    int dataLoaded = 0;
+                    FillingPointDetail fillingPointDetail = new FillingPointDetail();
+                    if (fb.status == 2){
+                        fillingPointDetail = fpds.Where(x => x.name == fb.filling_point).FirstOrDefault();
+                        if (fillingPointDetail != null)
+                        {
+                            dataLoaded = fillingPointDetail.RealtimeLoaded;
+                        }
+                    }                 
+                    
+                    try
+                    {
+                        dataWorkflow.Rows[cnt].Cells[7].Value = dataLoaded;
+                    }
+                    catch
+                    {
 
+                    }
+                    cnt++;  
+                }
+            }
+        }
         private void dgvFlow_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try 
@@ -274,19 +313,31 @@ namespace CS_Flow.UI
         private void tsFS1_Click(object sender, EventArgs e)
         {
             int selectedRow = dgvFlow.SelectedRows[0].Index;
-            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS1.Text;
+            string OrderId = dgvFlow.Rows[selectedRow].Cells["Order"].Value.ToString();
+            string FpName = tsFS1.Text;
+            _fillingBatchManager.UpdateByFillingPoint(OrderId, FpName);
+            updateWorkFlow();
+            //dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS1.Text;
         }
 
         private void tsFS2_Click(object sender, EventArgs e)
         {
             int selectedRow = dgvFlow.SelectedRows[0].Index;
-            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS2.Text;
+            string OrderId = dgvFlow.Rows[selectedRow].Cells["Order"].Value.ToString();
+            string FpName = tsFS2.Text;
+            _fillingBatchManager.UpdateByFillingPoint(OrderId, FpName);
+            updateWorkFlow();
+            //dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS2.Text;
         }
 
         private void tsFS3_Click(object sender, EventArgs e)
         {
             int selectedRow = dgvFlow.SelectedRows[0].Index;
-            dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS3.Text;
+            string OrderId = dgvFlow.Rows[selectedRow].Cells["Order"].Value.ToString();
+            string FpName = tsFS3.Text;
+            _fillingBatchManager.UpdateByFillingPoint(OrderId, FpName);
+            updateWorkFlow();
+            // dgvFlow.Rows[selectedRow].Cells["AssignTo"].Value = tsFS3.Text;
         }
     }
 }

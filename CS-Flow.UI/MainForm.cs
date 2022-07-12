@@ -9,22 +9,26 @@ namespace CS_Flow.UI
         private FillingBatchManager _fillingBatchManager;
         private List<FillingBatch> _fillingBatches;
         private List<FillingPointDetail> _fillingPointDetails;
-        private FillingPointDetailManager fillingPointDetailManager;
+        private static FillingPointDetailManager fillingPointDetailManager;
         private TransactionManager _transactionManager;
+        private ModbusServerManager _modbusServer;
 
         //Field Object Toolbox blue print
         private Button currentButton;
         private int TempIndex;
         private Form activeForm;
+        private static Button ButtonClose;
 
         //Field Activation
         bool mouseDown;
         private Point lastLocation;
 
         //thread
-        private Thread _ThreadBC;
-        private Thread _ThreadLoading;
-        private Thread _TheadGateIn;
+        private static Thread _ThreadBC;
+        private static Thread _ThreadLoading;
+        private static Thread _RealTimeLoaded;
+        private static Thread _TheadGateIn;
+
 
         //rest server
         private RestServerManager restServer;
@@ -41,7 +45,8 @@ namespace CS_Flow.UI
             _fillingBatches = new List<FillingBatch>();
             _fillingPointDetails = new List<FillingPointDetail>();
             _transactionManager = new TransactionManager();
-
+            _modbusServer = new ModbusServerManager();
+            ButtonClose = this.btnClose;
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -64,8 +69,13 @@ namespace CS_Flow.UI
         {
             mouseDown = false;
         }
+        private void Reset()
+        {
+            fillingPointDetailManager = new FillingPointDetailManager();
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Reset();
             this.FormBorderStyle = FormBorderStyle.None;
             btnGraphical.Enabled = false;
             btnGraphical.Visible = false;
@@ -75,24 +85,50 @@ namespace CS_Flow.UI
             Sliding();
 
             //rest Server
+            
+            //start thread
+            
+
+        }
+        private void startRestServer()
+        {
             restServer = new RestServerManager(gateInURL);
             restServer.startConnection();
-            //start thread
+            _TheadGateIn = new Thread(t => restServer.realtimeListening());
+            _TheadGateIn.Start();
+        }
+        public static void startAll()
+        {
+            ButtonClose.Visible = true;
             _ThreadBC = new Thread(t => fillingPointDetailManager.updateConnection());
             _ThreadLoading = new Thread(t => fillingPointDetailManager.updateDataBC());
-            _TheadGateIn = new Thread(t => restServer.realtimeListening());
+            _RealTimeLoaded = new Thread(t => fillingPointDetailManager.realTimeLoaded());            
             _ThreadBC.Start();
             _ThreadLoading.Start();
-            _TheadGateIn.Start();
+            _RealTimeLoaded.Start();
+            
+        }
+        public static void StopAll()
+        {
+            if (_ThreadBC.Join(TimeSpan.FromSeconds(3)) || _ThreadLoading.Join(TimeSpan.FromSeconds(3)) || _RealTimeLoaded.Join(TimeSpan.FromSeconds(3)))
+            {
+                _ThreadBC.Interrupt();
+                _ThreadLoading.Interrupt();
+                _RealTimeLoaded.Interrupt();
+            }
+            ButtonClose.Visible = false;
+            //_ThreadBC.Abort();
+            fillingPointDetailManager.stopBC();
+            //_ThreadLoading.Abort();
+            //_RealTimeLoaded.Abort();
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             tm_ack.Enabled = false;
-            fillingPointDetailManager.stopBC();
-            _ThreadBC.Abort();
-            _ThreadLoading.Abort();
+            StopAll();
+            _TheadGateIn.Abort();
             this.Close();
         }
 
@@ -169,6 +205,8 @@ namespace CS_Flow.UI
         private void tm_ack_Tick(object sender, EventArgs e)
         {
             //fillingPointDetailManager.updateConnection();
+            List<FillingPointDetail> fpds = new List<FillingPointDetail>();
+            fpds = fillingPointDetailManager.GetFillingPointDetails();
             if (currentButton.Name == "btnFillingPoint")
             {
                 realTimeFillingPoint();
@@ -177,8 +215,13 @@ namespace CS_Flow.UI
             {
                 loadTransaction();
             }
+            else if (currentButton.Name == "btnWorkFlow")
+            {
+                
+                UIWorkFlowForm.realtimeWorkFlow(fpds);
+            }
 
-
+            _modbusServer.UpdateValue(fpds);
 
             //updateTableFillingPoint();
             //var activeBt = currentButton;
@@ -299,7 +342,7 @@ namespace CS_Flow.UI
             {
                 for(int inc=0; inc < _fillingPointDetails.Count; inc++)
                 {
-                    UIFillingPointForm.updateFillingPoint(inc, _fillingPointDetails[inc].Status, (int)_fillingPointDetails[inc].tank_temperature);
+                    UIFillingPointForm.updateFillingPoint(inc, _fillingPointDetails[inc].Status, (int)_fillingPointDetails[inc].RealtimeLoaded);
                 }
             }
         }

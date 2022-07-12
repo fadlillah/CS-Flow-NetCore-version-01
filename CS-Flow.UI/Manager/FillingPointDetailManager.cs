@@ -15,6 +15,7 @@ namespace CS_Flow.Manager
         private List<FillingPointDetail> _fillingPointDetails;
         private FillingBatchManager _FillingBatchManager;
         private FillingSessionManager _fillingSessionManager;
+        public bool EventFillingPoint = false;
         public FillingPointDetailManager()
         {
             _danloadLibs = new List<DanloadNetLib>();
@@ -96,22 +97,69 @@ namespace CS_Flow.Manager
                                     {
                                         _fillingPointDetails[inc].Status = "Connected";
                                     }
+                                   
                                 }
                                 catch
                                 {
                                     _fillingPointDetails[inc].Status = "Disconnected";
                                 }
                                 
-                            }
 
+                            }
+                            else if (cd.protocol == "Accuload III")
+                            {
+
+                            }
                         }
-                        Random rn = new Random();
-                        int temp = rn.Next(0, 100);
-                        _fillingPointDetails[inc].tank_temperature = temp;
+                       
+                      //  _fillingPointDetails[inc].RealtimeLoaded = temp;
                     }
                 }
                 System.Threading.Thread.Sleep(100);
             }
+        }
+        private int getRealtimeLoaded(int cnt, FillingPointDetail fpd)
+        {
+            int result = 0;
+            List<FillingBatch> fillingBatches = new List<FillingBatch>();
+            FillingBatchManager fillingBatchManager = new FillingBatchManager();
+            fillingBatches = fillingBatchManager.getInProgress();
+            if (fillingBatches != null)
+            {
+                FillingBatch _fpb = fillingBatches.Where(x => x.filling_point == fpd.name).FirstOrDefault();
+                if (_fpb != null)
+                {
+                    FillingSession fillingSession = new FillingSession();
+                    FillingSessionManager fillingSessionManager = new FillingSessionManager();
+                    fillingSession = fillingSessionManager.getByBatchId(_fpb.id);
+                    if (fillingSession != null)
+                    {
+                        result = _danloadLibs[cnt].GrossTotal - fillingSession.start_totalizer;
+                    }
+                }
+            }
+           
+            return result;
+        }
+        public void realTimeLoaded()
+        {
+            while (true)
+            {
+                if (_fillingPointDetails != null)
+                {
+                    for (int inc=0; inc< _fillingPointDetails.Count; inc++)
+                    {
+                        FillingPointDetail fpd = new FillingPointDetail();
+                        fpd = _fillingPointDetails[inc];
+                        _fillingPointDetails[inc].RealtimeLoaded = getRealtimeLoaded(inc, fpd);
+                    //    Random rn = new Random();
+                    //    int temp = rn.Next(0, 100);
+                    //    _fillingPointDetails[inc].RealtimeLoaded = temp;
+                    }
+                }
+                Thread.Sleep(100);
+            }
+
         }
         public void updateDataBC()
         {
@@ -136,25 +184,27 @@ namespace CS_Flow.Manager
                                     {
                                         if (_danloadLibs[inc].KeyEnter != 0)
                                         {
+                                            _danloadLibs[inc].PinKeyAccept = true;
                                             List<FillingBatch> fillingBatchs = new List<FillingBatch>();
                                             fillingBatchs = _FillingBatchManager.getStandbyByFpPin(fpd.name, _danloadLibs[inc].KeyEnter);
+                                            
                                             if (fillingBatchs.Count == 1)
-                                            {
+                                            {                                                
                                                 _danloadLibs[inc].batch_request = fillingBatchs[0].preset;
                                                 _danloadLibs[inc].pinKey = Convert.ToInt32(fillingBatchs[0].pin);
                                                 _FillingBatchManager.UpdateStatus(fillingBatchs[0].order_id, 2);
-                                                //Gate In Filling Session
-                                                //FillingSession fs = new FillingSession();
-                                                //fs.batch_id = cd.id;
-                                                //fs.filling_point_id = fpd.id;
-                                                //fs.start_time =Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
-                                                //fs.start_totalizer = _danloadLibs[inc].GrossTotal;
-                                                //fs.preset = fillingBatchs[0].preset;
-                                                //fs.temperature = fpd.tank_temperature;
-                                                //fs.density = fpd.tank_density;
-                                                //_fillingSessionManager.Add(fs);
-                                                _fillingSessionManager.StartLoaded(_danloadLibs[0].GrossTotal, fpd, cd, fillingBatchs[0]);
-                                            }                                            
+                                                _danloadLibs[inc].KeyEnter = 0;
+                                                _fillingSessionManager.StartLoaded(_danloadLibs[0].GrossTotal, fpd, cd, fillingBatchs[0]);                                                
+                                            }
+                                            else
+                                            {
+                                                _danloadLibs[inc].PinKeyAccept = false;
+
+                                            }
+                                        }
+                                        if (_danloadLibs[inc].StartFlow == true)
+                                        {
+                                            _danloadLibs[inc].StartFlow = false;
                                         }
                                         if (_danloadLibs[inc].DanloadStatus == "END_TRANSACTION_STATE")
                                         {
@@ -186,8 +236,9 @@ namespace CS_Flow.Manager
                         }                        
                     }
                 }
+                Thread.Sleep(100);
             }
-        }
+        } 
         public void stopBC()
         {
             if (_fillingPointDetails != null)

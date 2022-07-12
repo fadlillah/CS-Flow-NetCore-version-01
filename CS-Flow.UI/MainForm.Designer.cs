@@ -231,7 +231,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(35, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 39);
+            this.label1.Size = new System.Drawing.Size(111, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "CS-Flow";
             // 
@@ -302,7 +302,6 @@
             // 
             // tm_ack
             // 
-            this.tm_ack.Interval = 500;
             this.tm_ack.Tick += new System.EventHandler(this.tm_ack_Tick);
             // 
             // MainForm

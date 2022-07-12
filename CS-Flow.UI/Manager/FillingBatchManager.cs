@@ -10,7 +10,11 @@ namespace CS_Flow.Manager
 {
     public class FillingBatchManager
     {
-        FillingBatchGateway _fillingBatchGateway = new FillingBatchGateway();
+        FillingBatchGateway _fillingBatchGateway;
+        public FillingBatchManager()
+        {
+           this._fillingBatchGateway = new FillingBatchGateway();
+        }
         public List<FillingBatch> getAll()
         {
             return _fillingBatchGateway.getAll();
@@ -58,6 +62,10 @@ namespace CS_Flow.Manager
         public bool UpdateGateOut(string OrderId)
         {
             return _fillingBatchGateway.UpdateGateOut(OrderId);
+        }
+        public bool UpdateByFillingPoint(string OrderId, string FpName)
+        {
+           return _fillingBatchGateway.UpdateByFillingPoint(OrderId, FpName);
         }
     }
 }

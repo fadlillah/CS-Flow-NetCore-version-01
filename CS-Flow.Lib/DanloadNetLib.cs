@@ -226,8 +226,16 @@ namespace CS_Flow.Danload
         {
             try
             {
-                Packet pack = new Packet(_clientSocket);
-                _clientSocket.BeginReceive(pack.DataBuffer, 0, pack.DataBuffer.Length, SocketFlags.None, new AsyncCallback(OnDataReceived), pack);
+                if (_clientSocket.Connected)
+                {
+                    Packet pack = new Packet(_clientSocket);
+                    _clientSocket.BeginReceive(pack.DataBuffer, 0, pack.DataBuffer.Length, SocketFlags.None, new AsyncCallback(OnDataReceived), pack);
+                }
+                else
+                {
+                    _clientSocket.Close();
+                }
+                
             }
 
             catch (SocketException se)
@@ -2131,7 +2139,6 @@ namespace CS_Flow.Danload
                 raw = new byte[response.Length];
                 Array.Copy(response, raw, response.Length);
             }
-
             public int rawLength { get { return raw.Length; } }
             public int MeterNumber { get { return BitConverter.ToInt16(raw, 2 + 2); } }
             public int GrossTotal { get { return BitConverter.ToInt32(raw, 2 + 4); } }
@@ -2328,13 +2335,22 @@ namespace CS_Flow.Danload
         }
         private void resetAllState()
         {
+            //keydata_keep = false;
+            //batchData_ready = false;
+            //ACK_Task = false;
+            ////StartCom_State = false;
+            //StartCom_fromStatus = false;
+            //batchEnded = false;
+            //transEnded = false;
             keydata_keep = false;
             batchData_ready = false;
             ACK_Task = false;
-            //StartCom_State = false;
+            Auth_clear = false;
+            StartCom_State = false;
             StartCom_fromStatus = false;
             batchEnded = false;
             transEnded = false;
+            transaction_number_2 = false;
         }
 
         public int count_press_start = 0;
@@ -2345,23 +2361,29 @@ namespace CS_Flow.Danload
                 DanloadStatus = "ServerConnected";
                 if (count_press_start == 0)
                 {
-                    //count_press_start++;
+                    count_press_start++;
+                    resetAllState();
                     StartCom_State = true;
                     StartCom_fromStatus = false;
                     State = (byte)_MACHINE_STATE.START_COMM_STATE;
-                    //aTimer.Enabled = false;
+                    aTimer.Enabled = false;
                     aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
                     aTimer.Interval = 500;
                     aTimer.Enabled = true;
+
                 }
                 else
                 {
+                    //resetAllState();
+                    //count_press_start = 0;
                     StartCom_fromStatus = true;
                     keydata_keep = false;
                     DanloadStatus = "Continue";
                     aTimer.Enabled = true;
-                    //State = (byte)_MACHINE_STATE.CHG_OP_MODE_STATE;
+                    //State = (byte)_MACHINE_STATE.CLEAR_STATUS_STATE;
+                    State = (byte)_MACHINE_STATE.START_COMM_STATE;
                 }
+                //Skema_Satu();
 
 
 
@@ -2383,7 +2405,7 @@ namespace CS_Flow.Danload
         private byte[] cmd_msg;
         public int batch_request;
 
-        private void Skema_Satu()
+        public void Skema_Satu()
         {
             if (ServerConnected)
             {
@@ -2637,6 +2659,8 @@ namespace CS_Flow.Danload
         public bool transEnded = false;
         public bool transaction_number_2 = false;
         public int KeyEnter = 0; //tambahan event enter BC
+        public bool PinKeyAccept = false;
+        public bool StartFlow = false; //tambahan untuk start flowing
         private void OnDataReceive(byte[] message, int messageSize)
         {
             if (AppIsExiting)
@@ -2714,16 +2738,13 @@ namespace CS_Flow.Danload
 
                                     //SetMessageToTextBox_FromThread("DISPLAY_MSG_STATE");
                                     DanloadStatus = "DISPLAY_MSG_STATE";
-
+                                    keydata_keep = false;
+                                    State = (byte)_MACHINE_STATE.REQ_MTR_VAL_STATE;
                                     if (batchEnded && transEnded)
                                     {
-                                        State = (byte)_MACHINE_STATE.CLEAR_STATUS_STATE;
+                                        //State = (byte)_MACHINE_STATE.CLEAR_STATUS_STATE;
                                         transaction_number_2 = true;
 
-                                    }
-                                    else
-                                    {
-                                        State = (byte)_MACHINE_STATE.REQ_MTR_VAL_STATE;
                                     }
 
 
@@ -2735,14 +2756,24 @@ namespace CS_Flow.Danload
                                     State = (byte)_MACHINE_STATE.REQUEST_KEYPAD_DATA_STATE;
                                     RspKeypad RspPad = new RspKeypad(ResponseDataframe);
                                     KeyEnter = RspPad.KeypadInput;
-                                   // public int KeyPad = RspKeypad.Key;
+                                    // public int KeyPad = RspKeypad.Key;
                                     //SetMessageToTextBox_FromThread("Request Keypad: " + RspPad.KeypadInput);
 
-                                    if (RspPad.KeypadInput == pinKey)
+                                    if (PinKeyAccept)
                                     {
-                                        //SetMessageToTextBox_FromThread("AUTH READY");
+                                        PinKeyAccept = false;
+                                        //if (batch_request!=0 && KeyEnter != 0)
+                                        //{
                                         State = (byte)_MACHINE_STATE.AUTH_TRANSACTION_STATE;
                                         keydata_keep = true;
+                                        //}
+                                        //else
+                                        //{
+                                        //    State = (byte)_MACHINE_STATE.DISPLAY_MSG_STATE;
+                                        //}
+                                        //SetMessageToTextBox_FromThread("AUTH READY");
+
+                                        // pinKey = 0;
                                     }
                                     else
                                     {
@@ -2802,7 +2833,10 @@ namespace CS_Flow.Danload
 
                                     if (RspStatus.TransactionEnded() && RspStatus.BatchEnded() && !RspStatus.KeypadDataAvailable() && transaction_number_2 == false)
                                     {
-                                        State = (byte)_MACHINE_STATE.DISPLAY_MSG_STATE;
+                                        //State = (byte)_MACHINE_STATE.DISPLAY_MSG_STATE;
+                                        transaction_number_2 = true;
+                                        resetAllState();
+
 
                                     }
 
@@ -2823,6 +2857,7 @@ namespace CS_Flow.Danload
 
                                     if (RspStatus.Flowing())
                                     {
+                                        StartFlow = true;
                                         State = (byte)_MACHINE_STATE.REQ_MTR_VAL_STATE;
                                         transaction_number_2 = false;
                                     }
@@ -2890,7 +2925,8 @@ namespace CS_Flow.Danload
 
                                 case (byte)_MACHINE_STATE.END_TRANSACTION_STATE:
 
-                                    State = (byte)_MACHINE_STATE.END_BATCH_STATE;
+                                    //State = (byte)_MACHINE_STATE.END_BATCH_STATE;
+                                    State = (byte)_MACHINE_STATE.CLR_DISPLAY_STATE;
                                     DanloadStatus = "END_TRANSACTION_STATE";
 
                                     break;
@@ -4422,7 +4458,7 @@ namespace CS_Flow.Danload
 
             Thread.Sleep(100);
 
-           
+
 
             _stillInThread = false;
 
@@ -4610,6 +4646,3 @@ namespace CS_Flow.Danload
         private int _iFromClient;
     }
 }
-
-
-

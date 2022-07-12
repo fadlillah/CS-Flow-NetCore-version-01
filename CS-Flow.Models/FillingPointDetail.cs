@@ -33,6 +33,7 @@ namespace CS_Flow.Models
         private int safetyCircuit6 = 0;
         private int safetyCircuit7 = 0;
         private int safetyCircuit8 = 0;
+        private int realtimeLoaded = 0;
         
         private List<ChildDevice> childDevices;
         private List<string> messages;
@@ -68,6 +69,8 @@ namespace CS_Flow.Models
         public int SafetyCircuit6 { get { return safetyCircuit6; } set { safetyCircuit6 = value; } }
         public int SafetyCircuit7 { get { return safetyCircuit7; } set { safetyCircuit7 = value; } }
         public int SafetyCircuit8 { get { return safetyCircuit8; } set { safetyCircuit8 = value; } }
+        public int RealtimeLoaded { get { return realtimeLoaded; } set { realtimeLoaded = value; } }
+
         public void setChildDevice(ChildDevice cd) 
         {
             childDevices.Add(cd);
