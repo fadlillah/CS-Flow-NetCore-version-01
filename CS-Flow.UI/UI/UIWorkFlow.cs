@@ -76,31 +76,38 @@ namespace CS_Flow.UI
                 {
                     status = "Standby";
                     rowColor = Color.White;
+                    cmsFlow.Enabled = true;
                 }
                 else if(fillingBatch.status == 1)
                 {
                     status = "Authorized";
                     rowColor = Color.LightGoldenrodYellow;
+                    cmsFlow.Enabled = false;
+
                 }
                 else if(fillingBatch.status == 2)
                 {
                     status = "In Progress";
                     rowColor = Color.LightGreen;
+                    cmsFlow.Enabled = false;
                 }
                 else if (fillingBatch.status == 3)
                 {
                     status = "Interrupted";
                     rowColor = Color.IndianRed;
+                    cmsFlow.Enabled = false;
                 }
                 else if (fillingBatch.status == 4)
                 {
                     status = "Completed";
                     rowColor = Color.DeepSkyBlue;
+                    cmsFlow.Enabled = false;
                 }
                 else if (fillingBatch.status == 5)
                 {
                     status = "Gate Out";
                     rowColor = Color.MediumPurple;
+                    cmsFlow.Enabled = false;
                 }
                 
                 dataWorkflow.Rows.Add(status, fillingBatch.order_id, fillingBatch.truck, fillingBatch.product, fillingBatch.preset, fillingBatch.filling_point, fillingBatch.pin);

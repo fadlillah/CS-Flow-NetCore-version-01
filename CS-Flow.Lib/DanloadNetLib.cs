@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Text;
+using CommonClassLibs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,380 +12,15 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+//using System.Windows.Forms;
+using TCPClient;
+using TCPIPClient;
 using System.Timers;
 using System.ComponentModel;
-using System.Collections;
 
-namespace CS_Flow.Danload
+
+namespace CS_Flow.Lib
 {
-    public class Client
-    {
-        /// <summary>
-        /// A delegate type called when a client recieves data from a server.  Void return type.
-        /// </summary>
-        /// <param name="message">A byte array representing the message received from the server.</param>
-        /// <param name="messageSize">The size, in bytes of the message.</param>
-        public delegate void ReceiveDataCallback(byte[] message, int messageSize);
-
-        /// <summary>
-        /// A delegate type called when a client receives a broadcast message.  Void return type.
-        /// </summary>
-        /// <param name="message">A byte array representing the message received from the server.</param>
-        /// <param name="messageSize">The size, in bytes of the message.</param>
-        public delegate void ReceiveBroadcastCallback(byte[] message, int messageSize);
-
-        /// <summary>
-        /// A delegate called when disconnected from the server.
-        /// </summary>
-        public delegate void DisconnectCallback();
-
-        private ReceiveDataCallback _receive = null;
-        private ReceiveBroadcastCallback _broadcast = null;
-        private DisconnectCallback _disconnect = null;
-
-        private Socket _clientSocket;
-        private Socket _broadcastSocket = null;
-        private bool _receiveBroadcasts = false;
-        private int _broadcastPort = 0;
-        public DateTime LastDataFromServer;
-
-        /// <summary>
-        /// Modify the callback function used when data is received from the server.
-        /// </summary>
-        public ReceiveDataCallback OnReceiveData
-        {
-            get
-            {
-                return _receive;
-            }
-
-            set
-            {
-                _receive = value;
-            }
-        }
-
-        /// <summary>
-        /// Modify the callback function used when data is received from the server.
-        /// </summary>
-        public ReceiveBroadcastCallback OnReceiveBroadcast
-        {
-            get
-            {
-                return _broadcast;
-            }
-
-            set
-            {
-                _broadcast = value;  
-            }
-        }
-
-        /// <summary>
-        /// Modify the callback function used when data is received from the server.
-        /// </summary>
-        public DisconnectCallback OnDisconnected
-        {
-            get
-            {
-                return _disconnect;
-            }
-
-            set
-            {
-                _disconnect = value;
-            }
-        }
-
-        public bool Connected
-        {
-            get
-            {
-                if (_clientSocket == null)
-                    return false;
-                else
-                    return _clientSocket.Connected;
-            }
-        }
-
-        public bool ReceiveBroadcasts
-        {
-            get
-            {
-                return _receiveBroadcasts;
-            }
-
-            set
-            {
-                if (_receiveBroadcasts != value)
-                {
-                    _receiveBroadcasts = value;
-                    if (_receiveBroadcasts)
-                    {
-                        if (_broadcastPort > 0)
-                            SetupBroadcastSocket();
-                    }
-
-                    else if (_broadcastSocket != null)
-                        _broadcastSocket.Close();
-                }
-            }
-        }
-
-        public int BroadcastPort
-        {
-            get
-            {
-                return _broadcastPort;
-            }
-
-            set
-            {
-                if (_broadcastPort != value)
-                {
-                    _broadcastPort = value;
-
-                    if (_receiveBroadcasts)
-                        SetupBroadcastSocket();
-                }
-            }
-        }
-
-        ///// <summary>
-        ///// Returns the Socket owned by this class. I may not need it!
-        ///// </summary>
-        //public Socket getTheSocket
-        //{
-        //    get
-        //    {
-        //        if (_clientSocket == null)
-        //            return null;
-        //        else
-        //            return _clientSocket;
-        //    }
-        //}
-
-        /// <summary>
-        /// Construct a Client setting the callback.
-        /// </summary>
-        /// <param name="receive">Callback, called when the client receives data from the server.</param>
-        public Client()
-        {
-            LastDataFromServer = DateTime.Now;//initialize to current time
-        }
-
-        /// <summary>
-        /// Connect to a server at a specific IP address and port.
-        /// </summary>
-        /// <param name="address">The IP address of the server to connect to.  
-        /// To get an IP address from a string use System.Net.IPAddress.Parse("0.0.0.0")</param>
-        /// <param name="port">The port number on the server to connect to.</param>
-        public void Connect(IPAddress address, int port)
-        {
-            try
-            {
-                Disconnect();
-
-                _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                _clientSocket.Connect(new IPEndPoint(address, port));
-
-                if (_clientSocket.Connected)
-                    WaitForData();
-            }
-
-            catch (SocketException se)
-            {
-                System.Console.WriteLine("Client EXCEPTION in Connect: " + se.Message);
-                ToFile(se.Message);
-            }
-        }
-
-        /// <summary>
-        /// Disconnect a client from a server.  If the client is not connected to a server when this function is called, there is no effect.
-        /// </summary>
-        public void Disconnect()
-        {
-            if (_clientSocket != null)
-                _clientSocket.Close();
-        }
-
-        /// <summary>
-        /// Send a message to the server we are connected to.
-        /// </summary>
-        /// <param name="message">A byte array representing the message to send.</param>
-        public void SendMessage(byte[] message)
-        {
-            if (_clientSocket != null)
-                if (_clientSocket.Connected)
-                    _clientSocket.Send(message);
-        }
-
-        /// <summary>
-        /// Start an asynchronous wait for data from the server.  When data is recieved, a callback will be triggered.
-        /// </summary>
-        private void WaitForData()
-        {
-            try
-            {
-                if (_clientSocket.Connected)
-                {
-                    Packet pack = new Packet(_clientSocket);
-                    _clientSocket.BeginReceive(pack.DataBuffer, 0, pack.DataBuffer.Length, SocketFlags.None, new AsyncCallback(OnDataReceived), pack);
-                }
-                else
-                {
-                    _clientSocket.Close();
-                }
-                
-            }
-
-            catch (SocketException se)
-            {
-                System.Console.WriteLine("Client EXCEPTION in WaitForData: " + se.Message);
-                ToFile(se.Message);
-            }
-        }
-
-        /// <summary>
-        /// A callback triggered by receiving data from the server.
-        /// </summary>
-        /// <param name="asyn">The packet object received from the server containing the received message.</param>
-        private void OnDataReceived(IAsyncResult asyn)
-        {
-            try
-            {
-                Packet socketData = (Packet)asyn.AsyncState;
-                int dataSize = socketData.CurrentSocket.EndReceive(asyn);
-
-                if (_receive != null)
-                    _receive(socketData.DataBuffer, dataSize);
-
-                WaitForData();
-            }
-
-            catch (ObjectDisposedException)
-            {
-                System.Console.WriteLine("Client EXCEPTION in OnDataReceived: Socket has been closed");
-            }
-
-            catch (SocketException se)
-            {
-                System.Console.WriteLine("Client EXCEPTION in OnDataReceived: " + se.Message);
-
-                if (OnDisconnected != null)
-                    OnDisconnected();
-
-                ToFile(se.Message);
-            }
-        }
-
-        private void SetupBroadcastSocket()
-        {
-            if (_broadcastSocket != null)
-                _broadcastSocket.Close();
-
-            _broadcastSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            _broadcastSocket.Bind((EndPoint)(new IPEndPoint(IPAddress.Any, _broadcastPort)));
-
-            WaitForBroadcast();
-        }
-
-        /// <summary>
-        /// Start an asynchronous wait for data from the server.  When data is recieved, a callback will be triggered.
-        /// </summary>
-        private void WaitForBroadcast()
-        {
-            try
-            {
-                Packet pack = new Packet(_broadcastSocket);
-                EndPoint port = (EndPoint)(new IPEndPoint(IPAddress.Any, _broadcastPort));
-
-                _broadcastSocket.BeginReceiveFrom(pack.DataBuffer, 0, pack.DataBuffer.Length, SocketFlags.None, ref port, new AsyncCallback(OnBroadcastReceived), pack);
-            }
-
-            catch (SocketException se)
-            {
-                System.Console.WriteLine("Client EXCEPTION in WaitForBroadcast: " + se.Message);
-            }
-        }
-
-        private void OnBroadcastReceived(IAsyncResult asyn)
-        {
-            try
-            {
-                Packet socketData = (Packet)asyn.AsyncState;
-                int dataSize = socketData.CurrentSocket.EndReceive(asyn);
-
-                if (_broadcast != null)
-                    _broadcast(socketData.DataBuffer, dataSize);
-
-                WaitForBroadcast();
-            }
-
-            catch (ObjectDisposedException)
-            {
-                System.Console.WriteLine("Client EXCEPTION in OnBroadcastReceived: Socket has been closed");
-            }
-
-            catch (SocketException se)
-            {
-                System.Console.WriteLine("Client EXCEPTION in OnBroadcastReceived: " + se.Message);
-            }
-        }
-
-        /// <summary>
-        /// Represents a TCP/IP transmission containing the socket it is using, the clientNumber
-        ///  (used by server communication only), and a data buffer representing the message.
-        /// </summary>
-        private class Packet
-        {
-            public Socket CurrentSocket;
-            //public byte[] DataBuffer = new byte[4096];
-            public byte[] DataBuffer = new byte[1024];
-
-            /// <summary>
-            /// Construct a Packet Object
-            /// </summary>
-            /// <param name="sock">The socket this Packet is being used on.</param>
-            /// <param name="client">The client number that this packet is from.</param>
-            public Packet(Socket sock)
-            {
-                CurrentSocket = sock;
-            }
-        }
-
-        private void ToFile(string message)
-        {
-            string AppPath = GeneralFunction.GetAppPath;
-
-            System.IO.StreamWriter sw = null;
-            try
-            {
-                sw = System.IO.File.AppendText(System.IO.Path.Combine(AppPath, "SockClient.txt"));
-                sw.WriteLine(String.Format("{0:G}: {1}.", DateTime.Now, message));
-            }
-            catch (Exception ex)
-            {
-                //Console.WriteLine("\n\nError in ToFile:\n" + message + "\n" + ex.Message + "\n\n");
-
-            }
-            finally
-            {
-                try
-                {
-                    if (sw != null)
-                    {
-                        sw.Close();
-                        sw.Dispose();
-                    }
-                }
-                catch
-                {
-                    //Console.WriteLine("\n\nISSUE HERE TOO:\n" + ex2.Message + "\n\n");
-                }
-            }
-        }
-    }
     public class DanloadNetLib
     {
         public enum _MACHINE_STATE : byte
@@ -2236,7 +1872,7 @@ namespace CS_Flow.Danload
         System.Timers.Timer GeneralTimer = null;
 
         private Thread FullPacketDataProcessThread = null;
-        private Queue<FullPacket> FullHostServerPacketList = null;
+        private Queue<TCPIPClient.FullPacket> FullHostServerPacketList = null;
         //public bool IsDisposed { get; }
         private Client client = null; //Client Socket class
 
@@ -3203,7 +2839,7 @@ namespace CS_Flow.Danload
                     {
                         try
                         {
-                            FullPacket fp;
+                            TCPIPClient.FullPacket fp;
                             lock (FullHostServerPacketList)
                                 fp = FullHostServerPacketList.Dequeue();
 
@@ -4068,26 +3704,7 @@ namespace CS_Flow.Danload
     }
     #endregion
 
-    public class GeneralFunction
-    {
-        static public string GetAppPath
-        {
-            get
-            {
-                return System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "TCPIPServerClient");
-            }
-        }
-
-        static public string GetDateTimeFormatted
-        {
-            get
-            {
-                return DateTime.Now.ToShortDateString() + ", " + DateTime.Now.ToLongTimeString();
-            }
-        }
-    }
-
-    public class UserClients
+   public class UserClients
     {
         public UserClients(string szClientsIP, ushort iClientPort, string szUserName,
             int serverID, string szClientsAltIP, string pcName)
@@ -4550,99 +4167,5 @@ namespace CS_Flow.Danload
         private byte TimeOut;
         private int _fileGutCounter;
 
-    }
-
-
-    class MotherOfRawPackets
-    {
-        public MotherOfRawPackets(int List_ClientID)
-        {
-            _iListClientID = List_ClientID;
-            _RawPacketsList = new Queue<RawPackets>();
-            _Remainder = new byte[1024];
-            _bytesRemaining = 0;
-        }
-
-        public int iListClientID { get { return _iListClientID; } }
-        public int bytesRemaining { get { return _bytesRemaining; } set { _bytesRemaining = value; } }
-        public byte[] Remainder { get { return _Remainder; } set { _Remainder = value; } }
-
-
-        /***************** List operations ********************************************/
-        public void AddToList(byte[] data, int SizeOfChunk)
-        {
-            lock (_RawPacketsList)
-                _RawPacketsList.Enqueue(new RawPackets(_iListClientID, data, SizeOfChunk));
-        }
-        public void ClearList()
-        {
-            //_RawPacketsList.TrimExcess();
-            lock (_RawPacketsList)
-                _RawPacketsList.Clear();
-        }
-
-        public RawPackets GetTopItem
-        {
-            get
-            {
-                RawPackets rp;
-                lock (_RawPacketsList)
-                    rp = _RawPacketsList.Dequeue();
-                return rp;
-            }
-        }
-
-        public int GetItemCount
-        {
-            get { return _RawPacketsList.Count; }
-        }
-
-        public void TrimTheFat()//Not sure if this helps anything
-        {
-            //_RawPacketsList.TrimExcess();
-        }
-        /******************************************************************************/
-
-        //Private variables
-        private int _iListClientID;
-        private Queue<RawPackets> _RawPacketsList;
-
-        private int _bytesRemaining;
-        private byte[] _Remainder;
-    }
-
-    class RawPackets
-    {
-        public RawPackets(int iClientId, byte[] theChunk, int sizeofchunk)
-        {
-            _dataChunk = new byte[sizeofchunk]; //create the space
-            _dataChunk = theChunk;              //ram it in there
-            _iClientId = iClientId;             //save who it came from
-            _iChunkLen = sizeofchunk;           //hang onto the space size.. (Length doesn't work)
-        }
-
-        public byte[] dataChunk { get { return _dataChunk; } }
-        public int iClientId { get { return _iClientId; } }
-        public int iChunkLen { get { return _iChunkLen; } }
-
-        private byte[] _dataChunk;
-        private int _iClientId;
-        private int _iChunkLen;
-    }
-
-    class FullPacket
-    {
-        public FullPacket(int iFromClient, byte[] thePacket)
-        {
-            _ThePacket = new byte[1024];
-            _ThePacket = thePacket;
-            _iFromClient = iFromClient;
-        }
-
-        public byte[] ThePacket { get { return _ThePacket; } set { _ThePacket = value; } }
-        public int iFromClient { get { return _iFromClient; } set { _iFromClient = value; } }
-
-        private byte[] _ThePacket;
-        private int _iFromClient;
     }
 }

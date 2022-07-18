@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CS_Flow.Models;
-using CS_Flow.Danload;
+using CS_Flow.Lib;
+
 using CS_Flow.Gateway;
 
 namespace CS_Flow.Manager
@@ -12,6 +13,7 @@ namespace CS_Flow.Manager
     public class FillingPointDetailManager
     {
         private List<DanloadNetLib> _danloadLibs;
+        private List<AcculoadLib> _acculoadLibs;
         private List<FillingPointDetail> _fillingPointDetails;
         private FillingBatchManager _FillingBatchManager;
         private FillingSessionManager _fillingSessionManager;
@@ -19,6 +21,7 @@ namespace CS_Flow.Manager
         public FillingPointDetailManager()
         {
             _danloadLibs = new List<DanloadNetLib>();
+            _acculoadLibs = new List<AcculoadLib>();
             _fillingPointDetails = new List<FillingPointDetail>();
             _FillingBatchManager = new FillingBatchManager();
             _fillingSessionManager = new FillingSessionManager();
@@ -44,8 +47,31 @@ namespace CS_Flow.Manager
                                 danloadTCP.IpAddress = connection[1];
                                 danloadTCP.Port = connection[2];
                                 _danloadLibs.Add(danloadTCP);
+                                AcculoadTCPConnection acculoadTCP = new AcculoadTCPConnection();
+                                acculoadTCP.fp_Id = 0;
+                                acculoadTCP.IpAddress = "";
+                                acculoadTCP.Port = "";
+                                _acculoadLibs.Add(acculoadTCP);
                             }
                         }
+                        else if (device.protocol == "Accuload III")
+                        {
+                            string[] connection = device.conn_str.Split(';');
+                            if (connection[0] == "TCP")
+                            {
+                                AcculoadTCPConnection acculoadTCP = new AcculoadTCPConnection();
+                                acculoadTCP.fp_Id = fpDetail.id;
+                                acculoadTCP.IpAddress = connection[1];
+                                acculoadTCP.Port = connection[2];
+                                _acculoadLibs.Add(acculoadTCP);
+                                DanloadTCPConnection danloadTCP = new DanloadTCPConnection();
+                                danloadTCP.fp_Id = 0;
+                                danloadTCP.IpAddress = "";
+                                danloadTCP.Port = "";
+                                _danloadLibs.Add(danloadTCP);
+                            }                            
+                        }
+
                     }
                 }
                 _fillingPointDetails.Add(fpDetail);
@@ -108,7 +134,32 @@ namespace CS_Flow.Manager
                             }
                             else if (cd.protocol == "Accuload III")
                             {
+                                try
+                                {
+                                    if (!_acculoadLibs[inc].ServerConnected)
+                                    {
+                                        _acculoadLibs[inc].Connect(connection[2], connection[1]);
+                                        if (_acculoadLibs[inc].ServerConnected)
+                                        {
+                                            _fillingPointDetails[inc].Status = "Connected";
+                                            _acculoadLibs[inc].startAccuload();
+                                        }
+                                        else
+                                        {
+                                            _fillingPointDetails[inc].Status = "Disconnected";
 
+                                        }
+                                    }
+                                    else
+                                    {
+                                        _fillingPointDetails[inc].Status = "Connected";
+                                    }
+
+                                }
+                                catch
+                                {
+                                    _fillingPointDetails[inc].Status = "Disconnected";
+                                }
                             }
                         }
                        
@@ -232,6 +283,60 @@ namespace CS_Flow.Manager
                                         }
                                     }                                    
                                 }
+                                if (cd.protocol == "Accuload III")
+                                {
+                                    if (_acculoadLibs[inc].ServerConnected)
+                                    {
+                                        if (_acculoadLibs[inc].keyEnter != 0)
+                                        {
+                                            _acculoadLibs[inc].PinKeyAccept = true;
+                                            List<FillingBatch> fillingBatchs = new List<FillingBatch>();
+                                            fillingBatchs = _FillingBatchManager.getStandbyByFpPin(fpd.name, _acculoadLibs[inc].keyEnter);
+
+                                            if (fillingBatchs.Count == 1)
+                                            {
+                                                _acculoadLibs[inc].batch_request = fillingBatchs[0].preset;
+                                                _acculoadLibs[inc].pinKey = Convert.ToInt32(fillingBatchs[0].pin);
+                                                _FillingBatchManager.UpdateStatus(fillingBatchs[0].order_id, 2);
+                                                _acculoadLibs[inc].keyEnter = 0;
+                                                _fillingSessionManager.StartLoaded(Convert.ToInt32(_danloadLibs[inc].GrossTotal), fpd, cd, fillingBatchs[0]);
+                                            }
+                                            else
+                                            {
+                                                _acculoadLibs[inc].PinKeyAccept = false;
+
+                                            }
+                                        }
+                                        //if (_acculoadLibs[inc] == true)
+                                        //{
+                                        //    _acculoadLibs[inc].StartFlow = false;
+                                        //}
+                                        if (_acculoadLibs[inc].responseAccuload == "BATCH_DONE, TRANSACTION_DONE")
+                                        {
+                                            //update filling batch to complete
+                                            FillingBatch fillingBatch = new FillingBatch();
+                                            fillingBatch = _FillingBatchManager.getProgressByFp(fpd.name);
+                                            if (fillingBatch != null)
+                                            {
+                                                _FillingBatchManager.UpdateStatus(fillingBatch.order_id, 4);
+
+                                                //update session to complete 
+                                                FillingSession fs = new FillingSession();
+                                                fs = _fillingSessionManager.getLoaded(fpd.id, fillingBatch.id);
+                                                fs.stop_time = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds());
+                                                fs.stop_totalizer = Convert.ToInt32(_danloadLibs[inc].GrossTotal);
+                                                fs.loaded = fs.stop_totalizer - fs.start_totalizer;
+                                                fs.temperature =Convert.ToInt32(_danloadLibs[inc].temp10);
+                                                fs.density =Convert.ToInt32(_danloadLibs[inc].dens);
+                                                fs.tank_supply = "";
+                                                fs.temperature =Convert.ToInt32(_danloadLibs[inc].temp10);
+                                                _fillingSessionManager.Complete(fs);
+
+                                            }
+
+                                        }
+                                    }
+                                }
                             }
                         }                        
                     }
@@ -266,6 +371,12 @@ namespace CS_Flow.Manager
 
     }  
     public class DanloadTCPConnection : DanloadNetLib
+    {
+        public int fp_Id { get; set; }
+        public string IpAddress { get; set; }
+        public string Port { get; set; }
+    }
+    public class AcculoadTCPConnection : AcculoadLib
     {
         public int fp_Id { get; set; }
         public string IpAddress { get; set; }
